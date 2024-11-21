@@ -1,9 +1,11 @@
-import Image from "next/image";
+import HomeContainer from "@/components/modules/HomeContainer";
+import Navbar from "@/components/shared/Navbar";
 
 export default function Home() {
   return (
     <div className="">
-      <h1>home page</h1>
+      <Navbar className="bg-primary-color"></Navbar>
+      <HomeContainer></HomeContainer>
     </div>
   );
 }
