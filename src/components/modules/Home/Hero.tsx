@@ -2,17 +2,17 @@ import React from "react";
 import heroImage1 from "@/assets/home/hero/heroImage1.png";
 import heroImage2 from "@/assets/home/hero/heroImage2.png";
 import Image from "next/image";
-import Container from "../shared/Container";
+import Container from "../../shared/Container";
 import { LocateIcon, MapPin, Search } from "lucide-react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+import { Input } from "../../ui/input";
+import { Button } from "../../ui/button";
 
 const Hero = () => {
   return (
     <div className="bg-primary-color py-16 ">
       <Container className="flex-center min-h-[calc(100vh-280px)] -translate-y-10">
         <div className="flex-1 md:space-y-8 space-y-4">
-          <div className="px-4 py-2 rounded bg-[#fff] w-fit">
+          <div className="px-4 py-2 rounded-md bg-[#fff] w-fit font-medium">
             Never stop learning
           </div>
           <h1 className="xl:text-7xl md:text-4xl text-2xl font-bold text-primary-blue">
