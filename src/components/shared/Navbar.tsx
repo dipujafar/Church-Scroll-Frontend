@@ -10,11 +10,11 @@ import { Button } from "../ui/button";
 const navLinks = [
   {
     label: "Explore",
-    href: "/",
+    href: "/churches",
   },
   {
     label: "Events",
-    href: "/",
+    href: "/events",
   },
   {
     label: "Resource",
@@ -26,7 +26,9 @@ const Navbar = ({ className }: { className?: string }) => {
   return (
     <div className={cn(className)}>
       <Container className="flex-between py-8">
-        <Image src={logo} alt="logo"></Image>
+        <Link href="/">
+          <Image src={logo} alt="logo"></Image>
+        </Link>
 
         {/*  */}
         <ul className="md:flex gap-x-5 items-center hidden ">

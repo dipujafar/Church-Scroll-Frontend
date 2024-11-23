@@ -30,11 +30,11 @@ const EventCard = ({ data }: { data: TEvent }) => {
               ? data?.hostName.slice(0, 25) + "..."
               : data?.hostName}
           </p>
-          <div className="flex items-center gap-x-1 truncate">
+          <div className="flex items-center gap-x-1 ">
             <Image src={location} alt="location_icon"></Image>
             {data?.location}
           </div>
-          <div className="flex items-center gap-x-1 truncate">
+          <div className="flex items-center gap-x-1">
             <Image src={calendar} alt="location_icon"></Image>
             {data?.date}
           </div>

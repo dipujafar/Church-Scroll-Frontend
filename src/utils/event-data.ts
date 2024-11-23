@@ -79,4 +79,20 @@ export const eventData = [
     date: "Jan 15, 2024, 3:00 PM - 6:00 PM",
     image: ["/event.png"],
   },
+  {
+    _id: 11,
+    name: "Youth Empowerment Workshop",
+    hostName: "Teen Leadership Coalition",
+    location: "High School Auditorium",
+    date: "Jan 15, 2024, 3:00 PM - 6:00 PM",
+    image: ["/event.png"],
+  },
+  {
+    _id: 12,
+    name: "Youth Empowerment Workshop",
+    hostName: "Teen Leadership Coalition",
+    location: "High School Auditorium",
+    date: "Jan 15, 2024, 3:00 PM - 6:00 PM",
+    image: ["/event.png"],
+  },
 ];

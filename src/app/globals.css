@@ -87,7 +87,7 @@ body {
 }
 
 .rpb-item:hover {
-  border: 2px solid #ebedfe !important;
+  border: 2px solid #abb2e4 !important;
   border-radius: 16px !important;
   transition: all 0.2s ease-in-out;
 }

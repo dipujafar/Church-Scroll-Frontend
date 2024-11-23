@@ -1,15 +1,20 @@
+import { cn } from "@/lib/utils";
 import Container from "./Container";
 
 type TPropsType = {
   image: string;
   title: string;
   description: string;
+  className?: string;
 };
 
-const TopBanner = ({ image, title, description }: TPropsType) => {
+const TopBanner = ({ image, title, description, className }: TPropsType) => {
   return (
     <div
-      className=" min-h-screen  bg-fixed md:bg-cover bg-center relative bg-opacity-80"
+      className={cn(
+        "min-h-screen  bg-fixed bg-cover bg-center relative bg-opacity-20 bg-gray-500",
+        className
+      )}
       style={{ backgroundImage: `url(${image})` }}
     >
       <Container>
@@ -19,7 +24,7 @@ const TopBanner = ({ image, title, description }: TPropsType) => {
               <h1 className=" lg:text-6xl md:text-5xl text-3xl font-bold text-center">
                 {title}
               </h1>
-              <p className="md:text-2xl font-medium text-center ">
+              <p className="md:text-2xl font-medium text-center max-w-5xl mx-auto ">
                 {description}
               </p>
             </div>
