@@ -1,6 +1,6 @@
 import Image from "next/image";
-import logo from "@/assets/logo.png";
-import dummyProfile from "@/assets/dummy-profile.png";
+import logo from "@/assets/image/logo.png";
+import dummyProfile from "@/assets/image/dummy-profile.png";
 import Container from "./Container";
 import { BellRing, Mail } from "lucide-react";
 import { cn } from "@/lib/utils";
