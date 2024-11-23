@@ -14,12 +14,12 @@ const NearbyUpcomingEvents = () => {
     <Carousel
       opts={{
         loop: true,
-        duration: 55,
+        duration: 60,
         align: "start",
       }}
       plugins={[
         Autoplay({
-          delay: 3500,
+          delay: 4000,
           stopOnInteraction: false,
           stopOnMouseEnter: true,
         }),

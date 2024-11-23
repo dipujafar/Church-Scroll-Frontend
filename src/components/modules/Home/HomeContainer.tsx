@@ -6,9 +6,9 @@ import UpcomingEvent from "./UpcomingEvents/UpcomingEvent";
 
 const HomeContainer = () => {
   return (
-    <div className="lg:space-y-12 space-y-6">
+    <div className="lg:space-y-16 space-y-8">
       <Hero></Hero>
-      <Container className="lg:space-y-12 space-y-6">
+      <Container className="lg:space-y-16 space-y-8">
         <FeaturedChurches></FeaturedChurches>
         <UpcomingEvent></UpcomingEvent>
       </Container>
