@@ -30,7 +30,7 @@ const TopFeaturedChurches = () => {
         {churchData?.slice(0, 8)?.map((church) => (
           <CarouselItem
             key={church?._id}
-            className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
+            className="md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
           >
             <div className="p-1">
               <ChurchCard data={church}></ChurchCard>
