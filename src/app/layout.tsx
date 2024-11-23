@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Figtree } from "next/font/google";
 import Footer from "@/components/shared/Footer";
+import "react-pagination-bar/dist/index.css";
 
 const figtree = Figtree({
   subsets: ["latin"],

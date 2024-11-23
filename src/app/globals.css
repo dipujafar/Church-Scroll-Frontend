@@ -79,3 +79,19 @@ body {
     @apply flex justify-between items-center;
   }
 }
+
+/* react pagination bar styles */
+.rpb-item {
+  border: 1px solid lightgray !important;
+  border-radius: 16px !important;
+}
+
+.rpb-item:hover {
+  border: 2px solid #ebedfe !important;
+  border-radius: 16px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.rpb-item--active {
+  background-color: #303060 !important;
+}
