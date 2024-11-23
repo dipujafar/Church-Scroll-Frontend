@@ -30,9 +30,9 @@ const NearbyUpcomingEvents = () => {
         {eventData?.slice(0, 8)?.map((event) => (
           <CarouselItem
             key={event?._id}
-            className="md:basis-1/3 lg:basis-1/3 xl:basis-1/4"
+            className="md:basis-1/2  lg:basis-1/3 2xl:basis-1/4"
           >
-            <div className="p-1">
+            <div className="p-1 flex-center flex-col ">
               <EventCard data={event}></EventCard>
             </div>
           </CarouselItem>

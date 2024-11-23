@@ -4,14 +4,16 @@ import FeaturedChurches from "./FeaturedChurches/FeaturedChurches";
 import Container from "@/components/shared/Container";
 import UpcomingEvent from "./UpcomingEvents/UpcomingEvent";
 import GetInTouch from "./GetInTouch";
+import HowTOWork from "./HowTOWork";
 
 const HomeContainer = () => {
   return (
-    <div className="lg:space-y-16 space-y-8">
+    <div className="xl:space-y-32 lg:space-y-20 space-y-10">
       <Hero></Hero>
-      <Container className="lg:space-y-16 space-y-8">
+      <Container className="xl:space-y-32 lg:space-y-20 space-y-10">
         <FeaturedChurches></FeaturedChurches>
         <UpcomingEvent></UpcomingEvent>
+        <HowTOWork></HowTOWork>
         <GetInTouch></GetInTouch>
       </Container>
     </div>

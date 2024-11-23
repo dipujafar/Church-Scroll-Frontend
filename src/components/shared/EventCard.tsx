@@ -9,7 +9,7 @@ import { Button } from "../ui/button";
 
 const EventCard = ({ data }: { data: TEvent }) => {
   return (
-    <Card className=" border-[#000] shadow-none bg-transparent h-[480px] ">
+    <Card className=" border-[#000] shadow-none bg-transparent min-h-[480px] max-w-[400px]  lg:max-w-full hover:shadow-2xl rounded-xl duration-100 ease-in">
       <CardContent className="py-5 px-5">
         <Image
           src={data?.image[0]}
@@ -19,7 +19,7 @@ const EventCard = ({ data }: { data: TEvent }) => {
           className="w-auto mx-auto h-56"
         ></Image>
         <div className="mt-5 space-y-2">
-          <h1 className="text-2xl text font-semibold">
+          <h1 className="xl:text-2xl text-lg font-semibold">
             {data?.name.length > 25
               ? data?.name.slice(0, 25) + "..."
               : data?.name}

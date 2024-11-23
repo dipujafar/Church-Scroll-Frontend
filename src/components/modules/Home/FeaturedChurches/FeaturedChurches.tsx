@@ -6,14 +6,14 @@ import TopFeaturedChurches from "./TopFeaturedChurches";
 
 const FeaturedChurches = () => {
   return (
-    <div className="space-y-5">
+    <div className="space-y-8">
       <SectionTitle
         title="Featured Churches"
         subTitle="Connect with vibrant church communities active on ChurchScroll."
       />
-      <div className="flex  justify-end">
+      <div className="flex  justify-end ">
         <Link href="/#">
-          <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden text-xl truncate flex items-center">
+          <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
             View all
             <ChevronRight
               size={24}

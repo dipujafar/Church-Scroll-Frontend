@@ -10,7 +10,7 @@ import { Button } from "../../ui/button";
 const Hero = () => {
   return (
     <div className="bg-primary-color py-16 ">
-      <Container className="flex-center min-h-[calc(100vh-280px)] -translate-y-10">
+      <Container className="flex-center flex-col-reverse lg:flex-row min-h-[calc(100vh-280px)] -translate-y-10 gap-x-10 gap-y-5">
         <div className="flex-1 md:space-y-8 space-y-4">
           <div className="px-4 py-2 rounded-md bg-[#fff] w-fit font-medium">
             Never stop learning
@@ -41,16 +41,16 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className=" justify-end flex-1 flex gap-x-8">
+        <div className=" md:justify-end flex-1 flex gap-x-8">
           <Image
             src={heroImage1}
             alt="heroImage1"
-            className="-translate-y-14"
+            className="md:-translate-y-14"
           ></Image>
           <Image
             src={heroImage2}
             alt="heroImage2"
-            className="translate-y-14"
+            className="md:translate-y-14 hidden md:block"
           ></Image>
         </div>
       </Container>
