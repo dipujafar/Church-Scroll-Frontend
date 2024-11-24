@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${figtree.className}  antialiased`}>
-        {children}
+        <div className="min-h-[calc(100vh-200px)]">{children}</div>
         <footer className="2xl:mt-32 lg:mt-20m mt-20">
           <Footer></Footer>
         </footer>

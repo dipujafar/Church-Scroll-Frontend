@@ -12,13 +12,13 @@ export const metadata = {
 const EventPage = () => {
   return (
     <div className="relative">
-      <Navbar className="absolute top-0 z-10 w-full bg-transparent"></Navbar>
-      <TopBanner
+      <Navbar className=""></Navbar>
+      {/* <TopBanner
         image="/eventsBg.png"
         title="Church Community Events"
         description="ChurchScroll offers a suite of features designed to enhance your community experience. From privacy settings to event management, we empower members to connect safely and meaningfully."
         className="text-white"
-      ></TopBanner>
+      ></TopBanner> */}
       <Container className="mt-5 lg:mt-10">
         <SectionTitle title="Explore Events"></SectionTitle>
         <EventContainer></EventContainer>
