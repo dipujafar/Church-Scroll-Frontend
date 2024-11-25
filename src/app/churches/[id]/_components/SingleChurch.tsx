@@ -14,6 +14,9 @@ import Image from "next/image";
 import Link from "next/link";
 import locationArrowIcon from "@/assets/icons/arrow-square.png";
 import { useState } from "react";
+import { ChevronRight } from "lucide-react";
+import ChurchMembers from "./ChurchMembers";
+import Events from "@/components/shared/Events";
 const SingleChurch = () => {
   const [currentTab, setCurrentTab] = useState(0);
   return (
@@ -83,7 +86,7 @@ const SingleChurch = () => {
         </div>
       </div>
       {/* Tabs */}
-      <div className="flex justify-center items-center gap-x-5">
+      <div className="mt-5 flex justify-center items-center gap-x-5">
         <Link
           href={"/churches/1/#description"}
           className={
@@ -136,6 +139,39 @@ const SingleChurch = () => {
         <h2 id="members" className="section-title">
           Members (79)
         </h2>
+        <div className="mt-2 flex  justify-end ">
+          <Link href="/#">
+            <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
+              View all
+              <ChevronRight
+                size={24}
+                color="#9A9CAA"
+                className="group-hover:translate-x-2 overflow-hidden duration-700"
+              />
+            </p>
+          </Link>
+        </div>
+        <ChurchMembers></ChurchMembers>
+      </div>
+
+      {/* church Events */}
+      <div className="md:mt-20 mt-14">
+        <h2 id="members" className="section-title">
+          Events
+        </h2>
+        <div className="mt-2 flex  justify-end ">
+          <Link href="/#">
+            <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
+              View all
+              <ChevronRight
+                size={24}
+                color="#9A9CAA"
+                className="group-hover:translate-x-2 overflow-hidden duration-700"
+              />
+            </p>
+          </Link>
+        </div>
+        <Events></Events>
       </div>
     </div>
   );

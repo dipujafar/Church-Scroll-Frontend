@@ -14,3 +14,12 @@ export type TEvent = {
   date: string;
   image: string[];
 };
+
+export type TMember = {
+  _id: number;
+  name: string;
+  designation: string;
+  churchName: string;
+  expert: string;
+  image: string;
+};

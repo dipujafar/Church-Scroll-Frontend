@@ -1,25 +1,24 @@
-"use client";
-import EventCard from "@/components/shared/EventCard";
+import MemberCard from "@/components/shared/MemberCard";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { eventData } from "@/utils/event-data";
-
+import { memberData } from "@/utils/member-data";
 import Autoplay from "embla-carousel-autoplay";
+import React from "react";
 
-const NearbyUpcomingEvents = () => {
+const ChurchMembers = () => {
   return (
     <Carousel
       opts={{
         loop: true,
-        duration: 60,
+        duration: 55,
         align: "start",
       }}
       plugins={[
         Autoplay({
-          delay: 4000,
+          delay: 3500,
           stopOnInteraction: false,
           stopOnMouseEnter: true,
         }),
@@ -27,13 +26,13 @@ const NearbyUpcomingEvents = () => {
       className="w-full mt-8"
     >
       <CarouselContent>
-        {eventData?.slice(0, 8)?.map((event) => (
+        {memberData?.slice(0, 8)?.map((member) => (
           <CarouselItem
-            key={event?._id}
+            key={member?._id}
             className="md:basis-1/2  lg:basis-1/3 2xl:basis-1/4"
           >
-            <div className="p-1 flex-center flex-col ">
-              <EventCard data={event}></EventCard>
+            <div className="p-1">
+              <MemberCard data={member}></MemberCard>
             </div>
           </CarouselItem>
         ))}
@@ -42,4 +41,4 @@ const NearbyUpcomingEvents = () => {
   );
 };
 
-export default NearbyUpcomingEvents;
+export default ChurchMembers;

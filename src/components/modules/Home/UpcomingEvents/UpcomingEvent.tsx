@@ -2,7 +2,7 @@ import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import NearbyUpcomingEvents from "./NearbyUpcomingEvents";
+import Events from "../../../shared/Events";
 
 const UpcomingEvent = () => {
   return (
@@ -23,7 +23,7 @@ const UpcomingEvent = () => {
           </p>
         </Link>
       </div>
-      <NearbyUpcomingEvents></NearbyUpcomingEvents>
+      <Events></Events>
     </div>
   );
 };
