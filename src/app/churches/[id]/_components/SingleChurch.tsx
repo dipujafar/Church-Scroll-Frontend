@@ -47,16 +47,14 @@ const SingleChurch = () => {
             <CarouselItem key={index}>
               <Card className="rounded-3xl">
                 <CardContent className="relative px-0 pb-0">
-                  <Link href={"/products"}>
-                    <Image
-                      src={data}
-                      width={2400}
-                      height={2400}
-                      alt="banner_image"
-                      quality={100}
-                      className="object-fit  xl:[400px] w-[2600px] rounded-3xl md:h-[330px] lg:h-[380px] 2xl:h-[500px]"
-                    />
-                  </Link>
+                  <Image
+                    src={data}
+                    width={2400}
+                    height={2400}
+                    alt="banner_image"
+                    quality={100}
+                    className="object-fit  xl:[400px] w-[2600px] rounded-3xl md:h-[330px] lg:h-[380px] 2xl:h-[500px] cursor-pointer"
+                  />
                 </CardContent>
               </Card>
             </CarouselItem>
