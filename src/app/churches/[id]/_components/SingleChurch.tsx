@@ -71,12 +71,14 @@ const SingleChurch = () => {
           </div>
         </div>
         <div>
-          <Button
-            className="bg-primary-blue hover:bg-black/7
+          <Link href="/prayer-request">
+            <Button
+              className="bg-primary-blue hover:bg-black/7
            duration-300 mr-2"
-          >
-            Prayer Request
-          </Button>
+            >
+              Prayer Request
+            </Button>
+          </Link>
           <Button
             className="bg-primary-blue hover:bg-black/7
            duration-300"
@@ -106,7 +108,7 @@ const SingleChurch = () => {
           Members
         </Link>
         <Link
-          href={"/churches/1/#event"}
+          href={"/churches/1/#events"}
           className={
             currentTab === 2 ? "border-b border-black duration-300" : ""
           }
@@ -156,7 +158,7 @@ const SingleChurch = () => {
 
       {/* church Events */}
       <div className="md:mt-20 mt-14">
-        <h2 id="members" className="section-title">
+        <h2 id="events" className="section-title">
           Events
         </h2>
         <div className="mt-2 flex  justify-end ">

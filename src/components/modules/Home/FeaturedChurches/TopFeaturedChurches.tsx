@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/carousel";
 import { churchData } from "@/utils/church-data";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
 import React from "react";
 
 const TopFeaturedChurches = () => {
@@ -33,7 +34,9 @@ const TopFeaturedChurches = () => {
             className="md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
           >
             <div className="p-1">
-              <ChurchCard data={church}></ChurchCard>
+              <Link href={`/churches/${church._id}`}>
+                <ChurchCard data={church}></ChurchCard>
+              </Link>
             </div>
           </CarouselItem>
         ))}
