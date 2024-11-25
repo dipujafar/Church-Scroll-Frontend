@@ -17,6 +17,11 @@ import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import ChurchMembers from "./ChurchMembers";
 import Events from "@/components/shared/Events";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 const SingleChurch = () => {
   const [currentTab, setCurrentTab] = useState(0);
   return (
@@ -79,12 +84,21 @@ const SingleChurch = () => {
               Prayer Request
             </Button>
           </Link>
-          <Button
-            className="bg-primary-blue hover:bg-black/7
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button
+                className="bg-primary-blue hover:bg-black/7
            duration-300"
-          >
-            Sponsor a church
-          </Button>
+              >
+                Sponsor a church
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <p>
+                It will redirect Stript payment form when implement backend.
+              </p>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
       {/* Tabs */}
@@ -162,7 +176,7 @@ const SingleChurch = () => {
           Events
         </h2>
         <div className="mt-2 flex  justify-end ">
-          <Link href="/#">
+          <Link href={`/events?church=${1}`}>
             <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
               View all
               <ChevronRight

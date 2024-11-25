@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { TimePicker } from "@/components/ui/dayandtimepicker";
+import { DateTimePicker, TimePicker } from "@/components/ui/dayandtimepicker";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,6 +15,7 @@ const PrayerRequestModal = ({
   open: boolean;
   setOpen: (open: boolean) => void;
 }) => {
+  const [date, setDate] = useState<Date | undefined>(undefined);
   const [startTime, setStartTime] = useState<Date | undefined>(undefined);
   const [endTime, setEndTime] = useState<Date | undefined>(undefined);
   return (
@@ -30,6 +31,17 @@ const PrayerRequestModal = ({
           <div className="grid w-full  items-center gap-1.5">
             <Label>Payer Name</Label>
             <Input type="text" id="name" className="w-full border-black" />
+          </div>
+          {/* input prayer Date */}
+          <div className="grid w-fit  items-center gap-1.5">
+            <Label>Date</Label>
+            <div className="flex gap-x-10">
+              <DateTimePicker
+                granularity="day"
+                value={date}
+                onChange={setDate}
+              />
+            </div>
           </div>
           {/* input prayer start time */}
           <div className="grid w-full  items-center gap-1.5">

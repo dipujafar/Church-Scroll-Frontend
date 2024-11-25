@@ -12,7 +12,7 @@ const UpcomingEvent = () => {
         subTitle="ChurchScroll offers a suite of features designed to enhance your community experience. From privacy settings to event management, we empower members to connect safely and meaningfully."
       ></SectionTitle>
       <div className="flex  justify-end">
-        <Link href="/#">
+        <Link href="/events">
           <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden text-xl truncate flex items-center">
             View all
             <ChevronRight

@@ -12,7 +12,7 @@ const FeaturedChurches = () => {
         subTitle="Connect with vibrant church communities active on ChurchScroll."
       />
       <div className="flex  justify-end ">
-        <Link href="/#">
+        <Link href="/churches">
           <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
             View all
             <ChevronRight

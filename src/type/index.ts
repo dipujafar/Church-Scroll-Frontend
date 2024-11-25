@@ -23,3 +23,14 @@ export type TMember = {
   expert: string;
   image: string;
 };
+
+export type TPrayerRequest = {
+  _id: number;
+  image: string;
+  name: string;
+  startTime: string;
+  endTime: string;
+  date: string;
+  prayerName: string;
+  description: string;
+};
