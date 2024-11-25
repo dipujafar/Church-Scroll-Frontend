@@ -53,6 +53,7 @@ export default {
         "primary-color": "#EBF7FF",
         "primary-blue": "#151F66",
         "primary-sky": "#EBEDFE",
+        "light-blue": "#3349F4",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -78,6 +78,9 @@ body {
   .flex-between {
     @apply flex justify-between items-center;
   }
+  .section-title {
+    @apply md:text-4xl text-xl font-bold;
+  }
 }
 
 /* react pagination bar styles */

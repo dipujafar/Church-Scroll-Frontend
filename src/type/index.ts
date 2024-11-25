@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
-export type churchData = {
-  image: string | StaticImageData;
+export type TChurchData = {
+  image: string[];
   name: string;
   _id: number;
 };

@@ -13,12 +13,12 @@ export const metadata = {
 const ChurchesPage = () => {
   return (
     <div className="relative">
-      <Navbar className=""></Navbar>
-      {/* <TopBanner
+      <Navbar className="absolute top-0 z-20 w-full"></Navbar>
+      <TopBanner
         image="/featuredBg.webp"
         title="Featured Churches"
         description="Connect with vibrant church communities active on ChurchScroll."
-      ></TopBanner> */}
+      ></TopBanner>
       <Container className="mt-5 lg:mt-10">
         <SectionTitle title="Explore Churches"></SectionTitle>
         <div className="mt-5 xl:w-[50%] lg:w-[70%] md:w-[85%] mx-auto">

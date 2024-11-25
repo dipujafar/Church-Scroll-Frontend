@@ -12,7 +12,7 @@ const TopBanner = ({ image, title, description, className }: TPropsType) => {
   return (
     <div
       className={cn(
-        "min-h-screen  bg-fixed bg-cover bg-center relative bg-opacity-20 bg-gray-500",
+        "min-h-[80vh]  bg-fixed bg-cover bg-center relative bg-opacity-20 bg-gray-500",
         className
       )}
       style={{ backgroundImage: `url(${image})` }}
