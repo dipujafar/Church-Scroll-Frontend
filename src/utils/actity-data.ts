@@ -2,7 +2,7 @@ export const activityData = [
   {
     _id: 1,
     title: "Family Mentorship Program",
-    image: ["/activityImage.png", "/activityImage.png"],
+    image: ["/activityImage.png", "/activityImage2.png"],
     description:
       "Coming to you from Australia. Joshua Roy has been life coaching now for 7 years, has run more than 300 live seminars, and has spent more than 1000 hours on 1 on 1 coaching. You have a conscious mind, and you have an unconscious mind. You will succeed in life to the degree that you can get both parts of your mind working in harmony together.",
   },
