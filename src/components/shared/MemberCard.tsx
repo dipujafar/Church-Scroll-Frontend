@@ -16,7 +16,7 @@ const MemberCard = ({ data }: { data: TMember }) => {
           height={1200}
           className="w-auto mx-auto h-56 rounded-t-xl"
         ></Image>
-        <div className="mt-5 md:space-y-5">
+        <div className="mt-3 space-y-2">
           <div className="space-y-2">
             <h1 className="xl:text-2xl text-lg font-semibold">
               {data?.name.length > 25

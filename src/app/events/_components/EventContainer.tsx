@@ -53,6 +53,8 @@ const EventContainer = () => {
             </div>
           ))}
         </div>
+
+        {/* pagination */}
         <div className="mt-10 text-end  ">
           <Pagination
             currentPage={currentPage}
