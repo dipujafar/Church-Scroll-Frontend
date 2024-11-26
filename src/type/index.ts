@@ -34,3 +34,16 @@ export type TPrayerRequest = {
   prayerName: string;
   description: string;
 };
+
+export type TWork = {
+  _id: number;
+  title: string;
+  description?: string;
+  image: string[];
+};
+export type TActivity = {
+  _id: number;
+  title: string;
+  description: string;
+  image: string[];
+};

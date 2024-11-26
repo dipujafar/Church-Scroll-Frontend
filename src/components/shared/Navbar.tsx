@@ -25,7 +25,7 @@ const navLinks = [
 const Navbar = ({ className }: { className?: string }) => {
   return (
     <div className={cn(className)}>
-      <Container className="flex-between py-8">
+      <Container className="flex-between py-4">
         <Link href="/">
           <Image src={logo} alt="logo"></Image>
         </Link>

@@ -154,7 +154,7 @@ const SingleChurch = () => {
           Members (79)
         </h2>
         <div className="mt-2 flex  justify-end ">
-          <Link href="/#">
+          <Link href="/members">
             <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
               View all
               <ChevronRight

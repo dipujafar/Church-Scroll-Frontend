@@ -79,7 +79,7 @@ body {
     @apply flex justify-between items-center;
   }
   .section-title {
-    @apply md:text-4xl text-xl font-bold;
+    @apply xl:text-4xl md:text-2xl text-xl font-bold;
   }
 }
 
