@@ -91,7 +91,7 @@ const MemberProfileContainer = () => {
         <div className="space-y-2 md:mt-16  mt-8">
           <h1 className="section-title">My Work</h1>
           <div className="flex  justify-end ">
-            <Link href="/works">
+            <Link href="/member-works">
               <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
                 View all
                 <ChevronRight

@@ -35,7 +35,7 @@ const MemberActivities = () => {
             className="md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
           >
             <div className="p-1">
-              <Link href={`/#/${activity._id}`}>
+              <Link href={`/member-activities/${activity._id}`}>
                 <ActivityCard data={activity}></ActivityCard>
               </Link>
             </div>

@@ -1,8 +1,13 @@
 import Container from "@/components/shared/Container";
-import SearchBar from "@/components/shared/SearchBar";
 import SectionTitle from "@/components/shared/SectionTitle";
 import MemberActivitiesContainer from "./MemberActivitiesContainer";
 import Navbar from "@/components/shared/Navbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Member Activities",
+  description: "Member Activities",
+};
 
 const MemberActivitiesPage = () => {
   return (
