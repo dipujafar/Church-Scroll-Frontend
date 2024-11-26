@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -6,8 +7,14 @@ import messageIcon from "@/assets/icons/message-icon.png";
 import { ChevronRight } from "lucide-react";
 import MemberWorks from "./MemberWorks";
 import MemberActivities from "./MemberActivities";
+import { reviewData } from "@/utils/reviewData";
+import { TReview } from "@/type";
+import ReviewCard from "@/components/shared/ReviewCard";
+import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
 
 const MemberProfileContainer = () => {
+  const [showReview, setShowReview] = useState(4);
   return (
     <div>
       {/* profile Image section */}
@@ -115,6 +122,55 @@ const MemberProfileContainer = () => {
           </div>
           <MemberActivities></MemberActivities>
         </div>
+
+        {/* review section */}
+        <div className=" md:mt-16  mt-8">
+          <h1 className="section-title">Reviews</h1>
+          <p className="mt-2 text-black/70">1 out 4 of 158 Reviews</p>
+          <div className="xl:w-[70%]">
+            <div className="mt-5 flex flex-col gap-y-8">
+              {reviewData?.slice(0, showReview)?.map((review: TReview) => (
+                <ReviewCard key={review?._id} data={review}></ReviewCard>
+              ))}
+            </div>
+            {reviewData?.length > 4 && (
+              <div className="flex justify-end">
+                {reviewData?.length <= showReview ? (
+                  <Button
+                    onClick={() => setShowReview(4)}
+                    variant="outline"
+                    className=" border-black/50 rounded-full duration-500"
+                  >
+                    See Less
+                  </Button>
+                ) : (
+                  <Button
+                    onClick={() => setShowReview((prev) => prev + 4)}
+                    variant="outline"
+                    className=" border-black/50 rounded-full duration-500"
+                  >
+                    See More
+                  </Button>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* send review section */}
+        <form className=" md:mt-16  mt-8">
+          <Textarea
+            rows={5}
+            placeholder="Write Here"
+            className="border-black bg-gray-100"
+          ></Textarea>
+          <Button
+            type="button"
+            className="mt-2 bg-primary-blue px-10 hover:bg-black/70"
+          >
+            Send
+          </Button>
+        </form>
       </Container>
     </div>
   );

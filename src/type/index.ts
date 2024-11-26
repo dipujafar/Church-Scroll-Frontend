@@ -47,3 +47,11 @@ export type TActivity = {
   description: string;
   image: string[];
 };
+
+export type TReview = {
+  _id: number;
+  image: string;
+  name: string;
+  time: string;
+  comment: string;
+};

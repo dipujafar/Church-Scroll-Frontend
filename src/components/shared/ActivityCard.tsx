@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const ActivityCard = ({ data }: { data: TActivity }) => {
   return (
-    <div className="flex flex-col   gap-y-2 group border pb-5 rounded-2xl hover:shadow-xl hover:border-black ">
+    <div className="flex flex-col  gap-y-2 group border pb-5 rounded-2xl hover:shadow-xl hover:border-black duration-300 ">
       <Image
         src={data?.image[0]}
         alt="church_image"

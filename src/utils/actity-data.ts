@@ -9,7 +9,7 @@ export const activityData = [
   {
     _id: 2,
     title: "Personal Development Workshop",
-    image: ["/activityImage.png", "/activityImage.png"],
+    image: ["/activityImage2.png", "/activityImage.png"],
     description:
       "Join our intensive personal development workshop to unlock your potential. With a focus on both individual and group activities, this workshop offers a tailored approach to personal growth.",
   },
@@ -23,7 +23,7 @@ export const activityData = [
   {
     _id: 4,
     title: "Mindfulness and Meditation Retreat",
-    image: ["/activityImage.png", "/activityImage.png"],
+    image: ["/activityImage2.png", "/activityImage.png"],
     description:
       "Experience tranquility at our Mindfulness and Meditation Retreat. Learn techniques to reduce stress and improve your mental well-being.",
   },
@@ -37,7 +37,7 @@ export const activityData = [
   {
     _id: 6,
     title: "Relationship Building Seminar",
-    image: ["/activityImage.png", "/activityImage.png"],
+    image: ["/activityImage2.png", "/activityImage.png"],
     description:
       "Explore the dynamics of building strong relationships in our Relationship Building Seminar. Gain insights and practical tools for better communication.",
   },
@@ -51,7 +51,7 @@ export const activityData = [
   {
     _id: 8,
     title: "Financial Literacy Workshop",
-    image: ["/activityImage.png", "/activityImage.png"],
+    image: ["/activityImage2.png", "/activityImage.png"],
     description:
       "Get equipped with essential financial skills in our Financial Literacy Workshop. Learn the foundations of budgeting, saving, and investing.",
   },
@@ -65,7 +65,7 @@ export const activityData = [
   {
     _id: 10,
     title: "Creative Thinking Bootcamp",
-    image: ["/activityImage.png", "/activityImage.png"],
+    image: ["/activityImage2.png", "/activityImage.png"],
     description:
       "Unlock your creativity in our Creative Thinking Bootcamp. Engage in innovative exercises that inspire out-of-the-box thinking.",
   },
