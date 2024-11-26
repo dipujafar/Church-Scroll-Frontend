@@ -12,7 +12,7 @@ const MemberWorkContainer = () => {
     <div>
       <div className="lg:mt-20 mt-10  grid 2xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5">
         {MemberWorkData?.map((work) => (
-          <Link href={`/member-activities/${work._id}`} key={work._id}>
+          <Link href={`/member-works/${work._id}`} key={work._id}>
             <WorkCard data={work}></WorkCard>
           </Link>
         ))}

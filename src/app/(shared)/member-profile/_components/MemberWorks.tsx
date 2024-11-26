@@ -33,7 +33,7 @@ const MemberWorks = () => {
             className="md:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
           >
             <div className="p-1">
-              <Link href={`/#/${work._id}`}>
+              <Link href={`/member-works/${work._id}`}>
                 <WorkCard data={work}></WorkCard>
               </Link>
             </div>
