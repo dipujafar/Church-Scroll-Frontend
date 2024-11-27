@@ -6,7 +6,7 @@ import calendar from "@/assets/icons/calendar.png";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
-const EventCard = ({ data }: { data: TEvent }) => {
+const EventCard = ({ data, btn = true }: { data: TEvent; btn?: boolean }) => {
   return (
     <Card className=" border-[#000] shadow-none bg-transparent min-h-[480px] max-w-[400px]  lg:max-w-full hover:shadow-2xl rounded-xl duration-100 ease-in">
       <CardContent className="py-5 px-5">
@@ -37,11 +37,13 @@ const EventCard = ({ data }: { data: TEvent }) => {
             <Image src={calendar} alt="location_icon"></Image>
             {data?.date}
           </div>
-          <Link href={`/events/${data?._id}`}>
-            <Button className="mt-5 w-full bg-primary-blue hover:bg-black/60 hover:animate-pulse">
-              View More
-            </Button>
-          </Link>
+          {btn && (
+            <Link href={`/events/${data?._id}`}>
+              <Button className="mt-5 w-full bg-primary-blue hover:bg-black/60 hover:animate-pulse">
+                View More
+              </Button>
+            </Link>
+          )}
         </div>
       </CardContent>
     </Card>

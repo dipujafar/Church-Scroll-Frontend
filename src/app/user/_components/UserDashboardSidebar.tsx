@@ -5,8 +5,6 @@ import {
   LogOut,
   Menu,
   X,
-  Settings,
-  ShoppingCart,
   User,
   Calendar1,
   Coins,
@@ -33,7 +31,7 @@ const UserDashboardSidebar = () => {
       key: "event",
       label: "Event",
       icon: <Calendar1 size={25} color="#8A8A8A" />,
-      href: "/user/event",
+      href: "/user/my-event",
     },
 
     {
@@ -77,7 +75,7 @@ const UserDashboardSidebar = () => {
   return (
     <div>
       {/* Menu Toggle Button for mobile/tablet devices */}
-      <div className="p-4 xl:hidden">
+      <div className="p-4 lg:hidden">
         <button
           onClick={toggleSidebar}
           className="text-gray-500 hover:text-gray-700"
@@ -90,10 +88,10 @@ const UserDashboardSidebar = () => {
       {/* Sidebar */}
       <div
         id="dashboardSidebar"
-        className={`fixed inset-y-0 left-0 z-30 xl:z-10 w-64 transform bg-white shadow-lg transition-transform duration-300 ease-in-out xl:relative xl:transform-none xl:shadow-none ${
+        className={`fixed inset-y-0 left-0 z-30 xl:z-10 w-64 transform bg-white shadow-lg transition-transform duration-300 ease-in-out lg:relative lg:transform-none lg:shadow-none ${
           isSidebarVisible
             ? "translate-x-0"
-            : "-translate-x-full xl:translate-x-0"
+            : "-translate-x-full lg:translate-x-0"
         }`}
       >
         <div className="rounded-lg border border-[#E6E6E6]  bg-white py-2 px-2">

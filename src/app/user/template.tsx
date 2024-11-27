@@ -10,7 +10,7 @@ const Template = ({ children }: { children: ReactNode }) => {
         <Navbar className="bg-white"></Navbar>
       </nav>
       <div className="min-h-screen bg-white py-10">
-        <Container className="items-start gap-x-8 xl:flex">
+        <Container className="items-start gap-x-8 lg:flex">
           <UserDashboardSidebar></UserDashboardSidebar>
           <div className="flex-grow">{children}</div>
         </Container>
