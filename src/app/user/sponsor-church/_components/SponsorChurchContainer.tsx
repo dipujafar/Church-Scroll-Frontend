@@ -70,7 +70,7 @@ const sponsorData = [
 
 const SponsorChurchContainer = () => {
   return (
-    <Table>
+    <Table className="bg-gray-50 rounded p-2">
       <TableCaption>A list of your recent sponsor by Kocham.</TableCaption>
       <TableHeader className="bg-primary-color">
         <TableRow className="text-lg">
@@ -83,7 +83,10 @@ const SponsorChurchContainer = () => {
       </TableHeader>
       <TableBody>
         {sponsorData.map((sponsor) => (
-          <TableRow key={sponsor.tnx} className="text-lg font-medium">
+          <TableRow
+            key={sponsor.tnx}
+            className="text-lg font-medium hover:bg-gray-200 duration-500"
+          >
             <TableCell className="truncate">{sponsor.tnx}</TableCell>
             <TableCell className="truncate">{sponsor.date}</TableCell>
             <TableCell className="truncate">{sponsor.churchName}</TableCell>

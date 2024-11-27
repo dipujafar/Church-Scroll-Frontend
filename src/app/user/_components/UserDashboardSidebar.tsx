@@ -9,6 +9,7 @@ import {
   Calendar1,
   Coins,
   SignpostBig,
+  UserPlus,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -45,6 +46,12 @@ const UserDashboardSidebar = () => {
       label: "Prayer Request",
       icon: <SignpostBig size={25} color="#8A8A8A" />,
       href: "/user/prayer-request",
+    },
+    {
+      key: "prayerRequest",
+      label: "My network",
+      icon: <UserPlus size={25} color="#8A8A8A" />,
+      href: "/user/my-network",
     },
   ];
 
