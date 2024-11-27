@@ -41,13 +41,15 @@ const Navbar = ({ className }: { className?: string }) => {
         <div className="md:flex hidden gap-x-5 items-center">
           <BellRing fill="#000" className="cursor-pointer" />
           <Mail className="cursor-pointer" />
-          <Image
-            src={dummyProfile}
-            alt="profile"
-            width={1200}
-            height={12000}
-            className="size-20 cursor-pointer"
-          ></Image>
+          <Link href={"/user/profile"}>
+            <Image
+              src={dummyProfile}
+              alt="profile"
+              width={1200}
+              height={12000}
+              className="size-20 cursor-pointer"
+            ></Image>
+          </Link>
         </div>
 
         {/* small device view */}
@@ -70,13 +72,15 @@ const Navbar = ({ className }: { className?: string }) => {
               <div className="flex md:gap-x-5 gap-x-3 items-center justify-center">
                 <BellRing fill="#000" className="cursor-pointer" />
                 <Mail className="cursor-pointer" />
-                <Image
-                  src={dummyProfile}
-                  alt="profile"
-                  width={1200}
-                  height={12000}
-                  className="size-16 cursor-pointer"
-                ></Image>
+                <Link href={"/user/profile"}>
+                  <Image
+                    src={dummyProfile}
+                    alt="profile"
+                    width={1200}
+                    height={12000}
+                    className="size-16 cursor-pointer"
+                  ></Image>
+                </Link>
               </div>
             </SheetContent>
           </Sheet>

@@ -1,4 +1,5 @@
 import React from "react";
+import ProfileContainer from "./_components/ProfileContainer";
 
 export const metadata = {
   title: "User Profile",
@@ -8,7 +9,7 @@ export const metadata = {
 const UserProfilePage = () => {
   return (
     <div>
-      <h1>user profile</h1>
+      <ProfileContainer></ProfileContainer>
     </div>
   );
 };
