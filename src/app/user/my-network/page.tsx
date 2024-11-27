@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ConnectionRequest from "./_components/ConnectionRequest";
+import Network from "./_components/Network";
 
 const MyNetworkPage = () => {
   return (
@@ -21,7 +22,9 @@ const MyNetworkPage = () => {
       <TabsContent value="account">
         <ConnectionRequest></ConnectionRequest>
       </TabsContent>
-      <TabsContent value="password">my network</TabsContent>
+      <TabsContent value="password">
+        <Network></Network>
+      </TabsContent>
     </Tabs>
   );
 };

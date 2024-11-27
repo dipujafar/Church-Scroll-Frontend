@@ -1,8 +1,9 @@
+import { Button } from "@/components/ui/button";
 import { requestData } from "@/utils/request-data";
 import Image from "next/image";
 import Link from "next/link";
 
-const ConnectionRequest = () => {
+const Network = () => {
   return (
     <div className="border p-5 border-black/80 rounded-md space-y-4 mt-5">
       {requestData?.map((data) => (
@@ -30,9 +31,7 @@ const ConnectionRequest = () => {
                 </Link>
               </div>
             </div>
-            <div className="lg:px-10 px-4  rounded-full font-semibold border border-black bg-primary-sky w-fit">
-              {data?.status}
-            </div>
+            <Button className="bg-primary-blue px-8">Message</Button>
           </div>
           <hr className="mt-3 border-black/50" />
         </div>
@@ -41,4 +40,4 @@ const ConnectionRequest = () => {
   );
 };
 
-export default ConnectionRequest;
+export default Network;
