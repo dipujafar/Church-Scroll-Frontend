@@ -39,8 +39,12 @@ const Navbar = ({ className }: { className?: string }) => {
           ))}
         </ul>
         <div className="md:flex hidden gap-x-5 items-center">
-          <BellRing fill="#000" className="cursor-pointer" />
-          <Mail className="cursor-pointer" />
+          <Link href={"/notifications"}>
+            <BellRing fill="#000" className="cursor-pointer" />
+          </Link>
+          <Link href={"/message"}>
+            <Mail className="cursor-pointer" />
+          </Link>
           <Link href={"/user/profile"}>
             <Image
               src={dummyProfile}
@@ -70,8 +74,12 @@ const Navbar = ({ className }: { className?: string }) => {
                 ))}
               </ul>
               <div className="flex md:gap-x-5 gap-x-3 items-center justify-center">
-                <BellRing fill="#000" className="cursor-pointer" />
-                <Mail className="cursor-pointer" />
+                <Link href={"/notifications"}>
+                  <BellRing fill="#000" className="cursor-pointer" />
+                </Link>
+                <Link href={"/message"}>
+                  <Mail className="cursor-pointer" />
+                </Link>
                 <Link href={"/user/profile"}>
                   <Image
                     src={dummyProfile}
