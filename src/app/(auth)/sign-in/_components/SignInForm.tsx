@@ -8,13 +8,10 @@ import {
 } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Eye, EyeOff } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
-
 import google from "@/assets/icons/google.png";
 import Image from "next/image";
 import Link from "next/link";
@@ -121,12 +118,12 @@ const SignInForm = () => {
           </div>
         </form>
         {/* google sign in */}
-        {/* <div className="relative mt-3">
+        <div className="relative mt-3">
           <Button className="w-full rounded-full" variant="outline">
             Continue with Google
           </Button>
           <Image src={google} alt="google" className="absolute left-2 top-1" />
-        </div> */}
+        </div>
       </CardContent>
 
       {/* Footer with link to register */}

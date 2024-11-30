@@ -33,18 +33,11 @@ const SignUpContainer = () => {
             </Button>
           </Link>
         </div>
-        {/* google sign in */}
-        {/* <div className="relative mt-3">
-            <Button className="w-full rounded-full" variant="outline">
-              Continue with Google
-            </Button>
-            <Image src={google} alt="google" className="absolute left-2 top-1" />
-          </div> */}
       </CardContent>
 
       {/* Footer with link to register */}
       <CardFooter className="flex justify-center gap-1">
-        <p className="text-secondary-gray">Already have an account</p>
+        <p className="text-secondary-gray">Already have an account?</p>
         <Link href={"/sing-in"}>
           <span className="text-lg text-green-600 font-medium"> Sign Up</span>
         </Link>
