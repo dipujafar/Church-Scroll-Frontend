@@ -18,7 +18,7 @@ const navLinks = [
   },
   {
     label: "Resource",
-    href: "/",
+    href: "/resources",
   },
 ];
 

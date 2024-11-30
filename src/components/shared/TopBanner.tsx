@@ -21,7 +21,7 @@ const TopBanner = ({ image, title, description, className }: TPropsType) => {
         <div className="overflow-x-hidden">
           <div className="absolute   top-1/2 left-1/2 -translate-x-1/2 transform -translate-y-1/2 w-full ">
             <div className="  space-y-3 ">
-              <h1 className=" lg:text-6xl md:text-5xl text-3xl font-bold text-center">
+              <h1 className=" lg:text-6xl md:text-5xl text-3xl font-bold text-center max-w-5xl mx-auto">
                 {title}
               </h1>
               <p className="md:text-2xl font-medium text-center max-w-5xl mx-auto ">

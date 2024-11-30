@@ -23,6 +23,14 @@ export type TMember = {
   expert: string;
   image: string;
 };
+export type TResources = {
+  _id: number;
+  name: string;
+  creator: string;
+  churchName: string;
+  services: string;
+  image: string;
+};
 
 export type TPrayerRequest = {
   _id: number;
