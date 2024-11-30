@@ -39,7 +39,7 @@ const SignInForm = () => {
   };
 
   return (
-    <Card className="xl:w-[650px] md:w-[500px] shadow-md hover:shadow-xl">
+    <Card className="xl:w-[650px] md:w-[500px] shadow-md ">
       <CardHeader>
         <CardTitle className="text-center text-4xl font-semibold">
           Sign In
@@ -133,7 +133,7 @@ const SignInForm = () => {
       <CardFooter className="flex justify-center gap-1">
         <p className="text-secondary-gray">Don&apos;t have an account</p>
         <Link href={"/sign-up"}>
-          <span className="text-lg font-medium"> Register</span>
+          <span className="text-lg text-green-600 font-medium"> Sign Up</span>
         </Link>
       </CardFooter>
     </Card>
