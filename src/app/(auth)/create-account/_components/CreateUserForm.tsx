@@ -70,7 +70,7 @@ const CreateAccountForm = () => {
       </CardHeader>
       <CardContent>
         <div className="flex  flex-col items-center justify-center gap-y-5 relative group">
-          <div className="group relative">
+          <div className="group relative mb-5">
             <Avatar className="size-44">
               <AvatarImage src={imageUrl || "/profile.png"} />
               <AvatarFallback className="text-5xl uppercase">
@@ -111,7 +111,7 @@ const CreateAccountForm = () => {
           {!fileName && !imageUrl && (
             <label
               htmlFor="fileInput"
-              className=" hidden group-hover:block absolute bg-gray-600"
+              className=" hidden group-hover:block absolute bg-gray-600 duration-300"
             >
               <Image
                 src={inputIcon}
