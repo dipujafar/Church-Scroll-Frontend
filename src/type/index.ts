@@ -33,6 +33,7 @@ export type TPrayerRequest = {
   date: string;
   prayerName: string;
   description: string;
+  churchName?: string;
 };
 
 export type TWork = {

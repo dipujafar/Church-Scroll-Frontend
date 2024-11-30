@@ -4,26 +4,26 @@ import Network from "./_components/Network";
 
 const MyNetworkPage = () => {
   return (
-    <Tabs defaultValue="account">
+    <Tabs defaultValue="network">
       <TabsList className="grid w-full grid-cols-2 ">
         <TabsTrigger
-          value="account"
+          value="network"
           className="data-[state=active]:bg-primary-blue data-[state=active]:text-white  text-black duration-300 truncate"
-        >
-          Connection Request
-        </TabsTrigger>
-        <TabsTrigger
-          value="password"
-          className="data-[state=active]:bg-primary-blue data-[state=active]:text-white text-black duration-300truncate"
         >
           My Network
         </TabsTrigger>
+        <TabsTrigger
+          value="request"
+          className="data-[state=active]:bg-primary-blue data-[state=active]:text-white text-black duration-300truncate"
+        >
+          Connection Request
+        </TabsTrigger>
       </TabsList>
-      <TabsContent value="account">
-        <ConnectionRequest></ConnectionRequest>
-      </TabsContent>
-      <TabsContent value="password">
+      <TabsContent value="network">
         <Network></Network>
+      </TabsContent>
+      <TabsContent value="request">
+        <ConnectionRequest></ConnectionRequest>
       </TabsContent>
     </Tabs>
   );

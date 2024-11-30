@@ -9,6 +9,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 2,
@@ -20,6 +21,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 3,
@@ -31,6 +33,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 4,
@@ -42,6 +45,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 5,
@@ -53,6 +57,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 6,
@@ -64,6 +69,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 7,
@@ -75,6 +81,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 8,
@@ -86,6 +93,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 9,
@@ -97,6 +105,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 10,
@@ -108,6 +117,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 11,
@@ -119,6 +129,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 12,
@@ -130,6 +141,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 13,
@@ -141,6 +153,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 14,
@@ -152,6 +165,7 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
   {
     _id: 15,
@@ -163,5 +177,6 @@ export const prayerData = [
     prayerName: "Divine Beginnings for us…",
     description:
       "Please pray about a situation where people on a certain place continuously harass people and make them believe God isn't with them. Please pray for the Holy Spirit to convict them and for God to ",
+    churchName: "Grace Fellowship Church",
   },
 ];

@@ -31,7 +31,9 @@ const Network = () => {
                 </Link>
               </div>
             </div>
-            <Button className="bg-primary-blue px-8">Message</Button>
+            <Link href="/message">
+              <Button className="bg-primary-blue px-8">Message</Button>
+            </Link>
           </div>
           <hr className="mt-3 border-black/50" />
         </div>
