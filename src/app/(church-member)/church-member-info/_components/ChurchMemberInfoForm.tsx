@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -14,12 +14,14 @@ import inputIcon from "@/assets/icons/inputIcon.png";
 import { Label } from "@/components/ui/label";
 import CountryStateCitySelector from "@/components/ui/country-state-city-selector";
 import { Checkbox } from "@/components/ui/checkbox";
+import { TagInput } from "@/components/ui/tag-input";
 
 // Define form data types
 interface FormData {
   name: string;
   designation: string;
   registrationCode: string;
+  servicesTags: string[];
 }
 
 const filterData = [
@@ -259,6 +261,22 @@ const ChurchMemberInfoForm = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="flex flex-col space-y-1.5">
+              <Label className="text-lg font-light text-primary-black/80">
+                Services Tags
+              </Label>
+
+              <Controller
+                name="servicesTags"
+                control={control}
+                render={({ field }) => (
+                  <TagInput
+                    value={field.value}
+                    onChange={(newValue) => field.onChange(newValue)}
+                  />
+                )}
+              />
             </div>
 
             {/* submit button */}
