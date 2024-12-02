@@ -40,7 +40,7 @@ const ChurchMemberSidebar = () => {
       key: "prayerRequest",
       label: "My network",
       icon: <UserPlus size={25} color="#8A8A8A" />,
-      href: "/user/my-network",
+      href: "/church-member/church-member-network",
     },
   ];
 
