@@ -5,15 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import messageIcon from "@/assets/icons/message-icon.png";
 import { ChevronRight } from "lucide-react";
-import MemberWorks from "./MemberWorks";
-import MemberActivities from "./MemberActivities";
+
 import { reviewData } from "@/utils/reviewData";
 import { TReview } from "@/type";
 import ReviewCard from "@/components/shared/ReviewCard";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
+import ChurchMemberWork from "./ChurchMemberWork";
+import ChurchMemberActivities from "./ChurchMemberActivities";
 
-const MemberProfileContainer = () => {
+const ChurchMemberProfile = () => {
   const [showReview, setShowReview] = useState(4);
   return (
     <div>
@@ -24,7 +25,7 @@ const MemberProfileContainer = () => {
         width={1900}
         height={1600}
         quality={100}
-        className="w-full h-[470px] max-w-[2020px] mx-auto"
+        className="w-full h-[350px] max-w-[2020px] mx-auto"
       ></Image>
       <Container>
         <Image
@@ -32,7 +33,7 @@ const MemberProfileContainer = () => {
           alt="profile_image"
           width={1200}
           height={1200}
-          className="md:size-52 size-32 rounded-full md:-translate-y-28 -translate-y-16"
+          className="md:size-44 size-32 rounded-full md:-translate-y-28 -translate-y-16"
         ></Image>
 
         {/* profile info */}
@@ -102,7 +103,7 @@ const MemberProfileContainer = () => {
               </p>
             </Link>
           </div>
-          <MemberWorks></MemberWorks>
+          <ChurchMemberWork></ChurchMemberWork>
         </div>
 
         {/* activity section */}
@@ -120,7 +121,7 @@ const MemberProfileContainer = () => {
               </p>
             </Link>
           </div>
-          <MemberActivities></MemberActivities>
+          <ChurchMemberActivities></ChurchMemberActivities>
         </div>
 
         {/* review section */}
@@ -156,24 +157,9 @@ const MemberProfileContainer = () => {
             )}
           </div>
         </div>
-
-        {/* send review section */}
-        <form className=" md:mt-16  mt-8">
-          <Textarea
-            rows={5}
-            placeholder="Write Here"
-            className="border-black bg-gray-100"
-          ></Textarea>
-          <Button
-            type="button"
-            className="mt-2 bg-primary-blue px-10 hover:bg-black/70"
-          >
-            Send
-          </Button>
-        </form>
       </Container>
     </div>
   );
 };
 
-export default MemberProfileContainer;
+export default ChurchMemberProfile;

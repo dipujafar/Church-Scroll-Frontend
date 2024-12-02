@@ -12,8 +12,10 @@ const Template = ({ children }: { children: ReactNode }) => {
       </nav>
       <div className="min-h-screen bg-white py-10">
         <Container className="items-start gap-x-8 lg:flex">
-          <ChurchMemberSidebar></ChurchMemberSidebar>
-          <div className="flex-grow">{children}</div>
+          <div className="lg:sticky lg:top-40">
+            <ChurchMemberSidebar></ChurchMemberSidebar>
+          </div>
+          <div className="flex-grow overflow-hidden">{children}</div>
         </Container>
       </div>
     </div>
