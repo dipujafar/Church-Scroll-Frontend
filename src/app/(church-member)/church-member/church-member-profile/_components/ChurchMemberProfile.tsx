@@ -3,12 +3,12 @@ import Container from "@/components/shared/Container";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, ChevronRight, X, XCircle } from "lucide-react";
+import { Camera, ChevronRight, X } from "lucide-react";
 
 import { reviewData } from "@/utils/reviewData";
 import { TReview } from "@/type";
 import ReviewCard from "@/components/shared/ReviewCard";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ChurchMemberWork from "./ChurchMemberWork";
 import ChurchMemberActivities from "./ChurchMemberActivities";
 import inputIcon from "@/assets/icons/inputIcon.png";
@@ -28,6 +28,8 @@ import { Controller, useForm } from "react-hook-form";
 import { DatePicker } from "@/components/ui/date-picker";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "@/components/ui/textarea";
+import AddWorkModal from "./AddWorkModal";
+import AddActivitiesModal from "./AddActivitiesModal";
 
 const ChurchMemberProfile = () => {
   const [showReview, setShowReview] = useState(4);
@@ -39,7 +41,8 @@ const ChurchMemberProfile = () => {
   const [aboutEdit, setAboutEdit] = useState(false);
   const [addServices, setAddServices] = useState(false);
   const [addServicesTag, setAddServicesTag] = useState(false);
-  const aboutRef = useRef(null);
+  const [addWork, setAddWork] = useState(false);
+  const [addActivities, setAddActivities] = useState(false);
 
   const { register, handleSubmit, control, reset, setValue } = useForm();
 
@@ -306,7 +309,6 @@ const ChurchMemberProfile = () => {
             <>
               <Textarea
                 rows={4}
-                ref={aboutRef}
                 defaultValue={
                   "Sister Maria is a licensed counselor with a specialty in family dynamics and faith-based counseling. She leads sessions on strengthening family relationships through Christian principles and offers guidance for parents in the community."
                 }
@@ -411,7 +413,10 @@ const ChurchMemberProfile = () => {
         <div className="space-y-4 md:mt-16  mt-8">
           <div className="flex justify-between items-center gap-x-2">
             <h1 className="section-title">My Work</h1>
-            <Button className="bg-gray-200 text-black border border-primary-blue/50 hover:bg-primary-blue/20">
+            <Button
+              onClick={() => setAddWork(true)}
+              className="bg-gray-200 text-black border border-primary-blue/50 hover:bg-primary-blue/20"
+            >
               Add Work
             </Button>
           </div>
@@ -434,7 +439,10 @@ const ChurchMemberProfile = () => {
         <div className="space-y-4 md:mt-16  mt-8">
           <div className="flex justify-between items-center gap-x-2">
             <h1 className="section-title">Activity</h1>
-            <Button className="bg-gray-200 text-black border border-primary-blue/50 hover:bg-primary-blue/20">
+            <Button
+              onClick={() => setAddActivities(true)}
+              className="bg-gray-200 text-black border border-primary-blue/50 hover:bg-primary-blue/20"
+            >
               Add Activity
             </Button>
           </div>
@@ -488,6 +496,11 @@ const ChurchMemberProfile = () => {
           </div>
         </div>
       </Container>
+      <AddWorkModal open={addWork} setOpen={setAddWork}></AddWorkModal>
+      <AddActivitiesModal
+        open={addActivities}
+        setOpen={setAddActivities}
+      ></AddActivitiesModal>
     </div>
   );
 };
