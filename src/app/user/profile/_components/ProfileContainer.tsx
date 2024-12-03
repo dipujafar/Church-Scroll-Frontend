@@ -4,7 +4,6 @@ import { X } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import fallBackImag from "@/assets/image/dummy-profile.png";
-import profileImage from "@/assets/image/profile.png";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";

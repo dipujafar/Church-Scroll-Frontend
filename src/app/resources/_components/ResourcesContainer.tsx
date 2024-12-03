@@ -1,5 +1,4 @@
 "use client";
-import MemberCard from "@/components/shared/MemberCard";
 import ResourcesCard from "@/components/shared/ResourcesCard";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";

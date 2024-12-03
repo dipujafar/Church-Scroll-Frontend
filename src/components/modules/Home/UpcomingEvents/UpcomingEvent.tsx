@@ -1,4 +1,3 @@
-import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";

@@ -2,7 +2,6 @@ import Container from "@/components/shared/Container";
 import Navbar from "@/components/shared/Navbar";
 import SectionTitle from "@/components/shared/SectionTitle";
 import TopBanner from "@/components/shared/TopBanner";
-import ChurchesContainer from "../churches/_components/ChurchesContainer";
 import ResourcesContainer from "./_components/ResourcesContainer";
 
 const ResourcesPage = () => {

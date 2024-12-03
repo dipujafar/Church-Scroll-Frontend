@@ -6,9 +6,7 @@ import {
 } from "@/components/ui/tooltip";
 import { TPrayerRequest } from "@/type";
 import { Trash2 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const UserPrayerCard = ({ data }: { data: TPrayerRequest }) => {
   return (

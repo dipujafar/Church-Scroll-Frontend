@@ -1,11 +1,7 @@
-import React from "react";
 import heroImage1 from "@/assets/home/hero/heroImage1.png";
 import heroImage2 from "@/assets/home/hero/heroImage2.png";
 import Image from "next/image";
 import Container from "../../shared/Container";
-import { MapPin, Search } from "lucide-react";
-import { Input } from "../../ui/input";
-import { Button } from "../../ui/button";
 import SearchBar from "@/components/shared/SearchBar";
 
 const Hero = () => {

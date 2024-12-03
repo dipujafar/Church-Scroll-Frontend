@@ -2,26 +2,12 @@ import Image from "next/image";
 import logo from "@/assets/image/logo.png";
 import dummyProfile from "@/assets/image/dummy-profile.png";
 import Container from "./Container";
-import { BellRing, Mail, TableOfContents } from "lucide-react";
+import { BellRing, TableOfContents } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-const navLinks = [
-  {
-    label: "Explore",
-    href: "/churches",
-  },
-  {
-    label: "Events",
-    href: "/events",
-  },
-  {
-    label: "Resource",
-    href: "/resources",
-  },
-];
 
-const Navbar = ({ className }: { className?: string }) => {
+const ChurchMemberNavbar = ({ className }: { className?: string }) => {
   return (
     <div className={cn(className)}>
       <Container className="flex-between  py-4">
@@ -30,19 +16,9 @@ const Navbar = ({ className }: { className?: string }) => {
         </Link>
 
         {/*  */}
-        <ul className="md:flex gap-x-5 items-center hidden ">
-          {navLinks.map((link) => (
-            <li key={link.href} className="text-lg font-medium">
-              <Link href={link.href}>{link.label}</Link>
-            </li>
-          ))}
-        </ul>
         <div className="md:flex hidden gap-x-5 items-center">
           <Link href={"/notifications"}>
             <BellRing fill="#000" className="cursor-pointer" />
-          </Link>
-          <Link href={"/message"}>
-            <Mail className="cursor-pointer" />
           </Link>
           <Link href={"/user/profile"}>
             <Image
@@ -64,20 +40,9 @@ const Navbar = ({ className }: { className?: string }) => {
             <SheetContent className="pt-10">
               <Image src={logo} alt="logo"></Image>
 
-              {/*  */}
-              <ul className="flex flex-col gap-x-5 items-center">
-                {navLinks.map((link) => (
-                  <li key={link.href} className="text-lg font-medium">
-                    <Link href={link.href}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
               <div className="flex md:gap-x-5 gap-x-3 items-center justify-center">
                 <Link href={"/notifications"}>
                   <BellRing fill="#000" className="cursor-pointer" />
-                </Link>
-                <Link href={"/message"}>
-                  <Mail className="cursor-pointer" />
                 </Link>
                 <Link href={"/user/profile"}>
                   <Image
@@ -97,4 +62,4 @@ const Navbar = ({ className }: { className?: string }) => {
   );
 };
 
-export default Navbar;
+export default ChurchMemberNavbar;

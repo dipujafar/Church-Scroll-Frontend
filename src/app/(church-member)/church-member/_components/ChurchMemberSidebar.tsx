@@ -1,17 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import {
-  LogOut,
-  Menu,
-  X,
-  User,
-  Calendar1,
-  Coins,
-  SignpostBig,
-  UserPlus,
-  Church,
-} from "lucide-react";
+import { LogOut, Menu, X, User, UserPlus, Church } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 

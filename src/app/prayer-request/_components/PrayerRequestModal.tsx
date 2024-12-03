@@ -5,8 +5,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { MoveLeft, MoveRight } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const PrayerRequestModal = ({
   open,
