@@ -6,15 +6,18 @@ import {
   Menu,
   X,
   User,
+  UserPlus,
+  Church,
+  Users,
   Calendar1,
+  CircleDollarSign,
   Coins,
   SignpostBig,
-  UserPlus,
 } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
-const UserDashboardSidebar = () => {
+const ChurchAdminSidebar = () => {
   const pathname = usePathname();
   const path = pathname?.split("/")[2];
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -26,32 +29,44 @@ const UserDashboardSidebar = () => {
       key: "profile",
       label: "My profile",
       icon: <User size={25} color="#8A8A8A" />,
-      href: "/user/profile",
+      href: "/church-admin/church-admin-profile",
     },
     {
-      key: "event",
-      label: "Event",
-      icon: <Calendar1 size={25} color="#8A8A8A" />,
-      href: "/user/my-event",
+      key: "my-church",
+      label: "My Church",
+      icon: <Church size={25} color="#8A8A8A" />,
+      href: "/church-admin/church-profile",
     },
 
+    {
+      key: "members",
+      label: "Members",
+      icon: <Users size={25} color="#8A8A8A" />,
+      href: "/church-admin/church-member",
+    },
+    {
+      key: "church-events",
+      label: "Events",
+      icon: <Calendar1 size={25} color="#8A8A8A" />,
+      href: "/church-admin/church-events",
+    },
+    {
+      key: "manage-subscription",
+      label: "Manage Subscription",
+      icon: <CircleDollarSign size={25} color="#8A8A8A" />,
+      href: "/church-admin/manage-subscription",
+    },
     {
       key: "sponsorChurch",
       label: "Sponsor a church",
       icon: <Coins size={25} color="#8A8A8A" />,
-      href: "/user/sponsor-church",
+      href: "/church-admin/sponsor-church",
     },
     {
       key: "prayerRequest",
       label: "Prayer Request",
       icon: <SignpostBig size={25} color="#8A8A8A" />,
-      href: "/user/my-prayer",
-    },
-    {
-      key: "my-network",
-      label: "My network",
-      icon: <UserPlus size={25} color="#8A8A8A" />,
-      href: "/user/my-network",
+      href: "/church-admin/prayer-request",
     },
   ];
 
@@ -95,7 +110,7 @@ const UserDashboardSidebar = () => {
       {/* Sidebar */}
       <div
         id="dashboardSidebar"
-        className={`fixed inset-y-0 left-0 z-30 xl:z-10 w-64 transform bg-white shadow-lg transition-transform duration-300 ease-in-out lg:relative lg:transform-none lg:shadow-none ${
+        className={`fixed inset-y-0 left-0 z-30 xl:z-10 w-72 transform bg-white shadow-lg transition-transform duration-300 ease-in-out lg:relative lg:transform-none lg:shadow-none ${
           isSidebarVisible
             ? "translate-x-0"
             : "-translate-x-full lg:translate-x-0"
@@ -109,13 +124,14 @@ const UserDashboardSidebar = () => {
                 key={link.key}
                 className={cn(
                   "flex items-center gap-x-3 px-5 py-3 text-lg text-gray-scale-600 transition-all duration-300 ease-in-out",
-                  pathname === link.href && "bg-primary-sky text-black rounded",
+                  pathname === link.href &&
+                    "bg-primary-sky text-black font-medium rounded",
                   link.href.includes(path) &&
-                    "bg-primary-sky text-black rounded"
+                    "bg-primary-sky text-black rounded font-medium"
                 )}
               >
                 {link.icon}
-                <span className="text-black/70">{link.label}</span>
+                <span className="text-black/70 truncate">{link.label}</span>
               </Link>
             ))}
 
@@ -136,4 +152,4 @@ const UserDashboardSidebar = () => {
   );
 };
 
-export default UserDashboardSidebar;
+export default ChurchAdminSidebar;
