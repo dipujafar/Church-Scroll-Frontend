@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Controller, useForm } from "react-hook-form";
 import { PhoneInput } from "@/components/ui/phone-input";
 
-const ProfileContainer = () => {
+const ChurchAdminProfileContainer = () => {
   const [fileName, setFileName] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
@@ -64,7 +64,7 @@ const ProfileContainer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-5">
-          {/* input email*/}
+          {/* input email */}
           <div className="grid w-full   gap-1.5">
             <Label className="text-lg">E-Mail</Label>
             <Input
@@ -75,7 +75,6 @@ const ProfileContainer = () => {
               className="text-black/80 text-lg font-medium bg-gray-50 border-gray-400 py-5 w-full"
             />
           </div>
-          {/* input contact number */}
           {/* input contact number*/}
           <div className="grid w-full items-center ">
             <div className="grid w-full items-center gap-1.5 ">
@@ -156,4 +155,4 @@ const ProfileContainer = () => {
   );
 };
 
-export default ProfileContainer;
+export default ChurchAdminProfileContainer;
