@@ -62,7 +62,7 @@ const EventAttendeesPage = () => {
                   {data.contact}
                 </TableCell>
                 <TableCell className="truncate text-center">
-                  ${data.email}
+                  {data.email}
                 </TableCell>
               </TableRow>
             ))}
