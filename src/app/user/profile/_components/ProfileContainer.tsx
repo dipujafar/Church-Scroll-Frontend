@@ -14,7 +14,9 @@ const ProfileContainer = () => {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
+
     const file = input.files?.[0];
+    console.log(file);
 
     if (file) {
       const url = URL.createObjectURL(file);

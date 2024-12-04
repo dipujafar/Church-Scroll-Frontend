@@ -1,9 +1,10 @@
 import React from "react";
+import ChurchProfileContainer from "./_components/churchProfileContainer";
 
 const ChurchProfile = () => {
   return (
     <div>
-      <h1>Church Profile</h1>
+      <ChurchProfileContainer></ChurchProfileContainer>
     </div>
   );
 };
