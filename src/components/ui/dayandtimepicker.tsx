@@ -269,6 +269,28 @@ function Calendar({
   }, []);
 
   const YEARS = React.useMemo(() => genYears(yearRange), []);
+  const disableLeftNavigation = () => {
+    const today = new Date();
+    const startDate = new Date(today.getFullYear() - yearRange, 0, 1);
+    if (props.month) {
+      return (
+        props.month.getMonth() === startDate.getMonth() &&
+        props.month.getFullYear() === startDate.getFullYear()
+      );
+    }
+    return false;
+  };
+  const disableRightNavigation = () => {
+    const today = new Date();
+    const endDate = new Date(today.getFullYear() + yearRange, 11, 31);
+    if (props.month) {
+      return (
+        props.month.getMonth() === endDate.getMonth() &&
+        props.month.getFullYear() === endDate.getFullYear()
+      );
+    }
+    return false;
+  };
 
   return (
     <DayPicker
@@ -278,17 +300,19 @@ function Calendar({
         months:
           "flex flex-col sm:flex-row space-y-4  sm:space-y-0 justify-center",
         month: "flex flex-col items-center space-y-4",
-        //@ts-ignore
+        // @ts-ignore
         month_caption: "flex justify-center pt-1 relative items-center",
         caption_label: "text-sm font-medium",
         nav: "space-x-1 flex items-center ",
         button_previous: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-5 top-5"
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-5 top-5",
+          disableLeftNavigation() && "pointer-events-none"
         ),
         button_next: cn(
           buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-5 top-5"
+          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-5 top-5",
+          disableRightNavigation() && "pointer-events-none"
         ),
         month_grid: "w-full border-collapse space-y-1",
         weekdays: cn("flex", props.showWeekNumber && "justify-end"),
@@ -320,7 +344,7 @@ function Calendar({
           ) : (
             <ChevronRight className="h-4 w-4" />
           ),
-          // @ts-ignore
+        // @ts-ignore
         MonthCaption: ({ calendarMonth }) => {
           return (
             <div className="inline-flex gap-2">
@@ -598,7 +622,6 @@ const TimePicker = React.forwardRef<TimePickerRef, TimePickerProps>(
       }),
       [minuteRef, hourRef, secondRef]
     );
-
     return (
       <div className="flex items-center justify-center gap-2">
         <label htmlFor="datetime-picker-hour-input" className="cursor-pointer">
@@ -691,6 +714,10 @@ type DateTimePickerProps = {
    **/
   granularity?: Granularity;
   className?: string;
+  /**
+   * Show the default month and time when popup the calendar. Default is the current Date().
+   **/
+  defaultPopupValue?: Date;
 } & Pick<
   CalendarProps,
   "locale" | "weekStartsOn" | "showWeekNumber" | "showOutsideDays"
@@ -707,6 +734,7 @@ const DateTimePicker = React.forwardRef<
   (
     {
       locale = enUS,
+      defaultPopupValue = new Date(new Date().setHours(0, 0, 0, 0)),
       value,
       onChange,
       hourCycle = 24,
@@ -720,33 +748,59 @@ const DateTimePicker = React.forwardRef<
     },
     ref
   ) => {
-    const [month, setMonth] = React.useState<Date>(value ?? new Date());
+    const [month, setMonth] = React.useState<Date>(value ?? defaultPopupValue);
     const buttonRef = useRef<HTMLButtonElement>(null);
+    const [displayDate, setDisplayDate] = React.useState<Date | undefined>(
+      value ?? undefined
+    );
     /**
      * carry over the current time when a user clicks a new day
      * instead of resetting to 00:00
      */
     const handleSelect = (newDay: Date | undefined) => {
-      if (!newDay) return;
-      if (!value) {
+      if (!newDay) {
+        return;
+      }
+      if (!defaultPopupValue) {
+        newDay.setHours(
+          month?.getHours() ?? 0,
+          month?.getMinutes() ?? 0,
+          month?.getSeconds() ?? 0
+        );
         onChange?.(newDay);
         setMonth(newDay);
         return;
       }
-      const diff = newDay.getTime() - value.getTime();
+      const diff = newDay.getTime() - defaultPopupValue.getTime();
       const diffInDays = diff / (1000 * 60 * 60 * 24);
-      const newDateFull = add(value, { days: Math.ceil(diffInDays) });
+      const newDateFull = add(defaultPopupValue, {
+        days: Math.ceil(diffInDays),
+      });
+      newDateFull.setHours(
+        month?.getHours() ?? 0,
+        month?.getMinutes() ?? 0,
+        month?.getSeconds() ?? 0
+      );
       onChange?.(newDateFull);
       setMonth(newDateFull);
+    };
+
+    const onSelect = (newDay?: Date) => {
+      if (!newDay) {
+        return;
+      }
+      onChange?.(newDay);
+      setMonth(newDay);
+      setDisplayDate(newDay);
     };
 
     useImperativeHandle(
       ref,
       () => ({
         ...buttonRef.current,
-        value,
+        value: displayDate,
       }),
-      [value]
+      [displayDate]
     );
 
     const initHourFormat = {
@@ -776,15 +830,15 @@ const DateTimePicker = React.forwardRef<
             variant="outline"
             className={cn(
               "w-full justify-start text-left font-normal",
-              !value && "text-muted-foreground",
+              !displayDate && "text-muted-foreground",
               className
             )}
             ref={buttonRef}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
-            {value ? (
+            {displayDate ? (
               format(
-                value,
+                displayDate,
                 hourCycle === 24
                   ? initHourFormat.hour24
                   : initHourFormat.hour12,
@@ -800,9 +854,18 @@ const DateTimePicker = React.forwardRef<
         <PopoverContent className="w-auto p-0">
           <Calendar
             mode="single"
-            selected={value}
+            selected={displayDate}
             month={month}
-            onSelect={(d) => handleSelect(d)}
+            onSelect={(newDate) => {
+              if (newDate) {
+                newDate.setHours(
+                  month?.getHours() ?? 0,
+                  month?.getMinutes() ?? 0,
+                  month?.getSeconds() ?? 0
+                );
+                onSelect(newDate);
+              }
+            }}
             onMonthChange={handleSelect}
             yearRange={yearRange}
             locale={locale}
@@ -811,8 +874,14 @@ const DateTimePicker = React.forwardRef<
           {granularity !== "day" && (
             <div className="border-t border-border p-3">
               <TimePicker
-                onChange={onChange}
-                date={value}
+                onChange={(value) => {
+                  onChange?.(value);
+                  setDisplayDate(value);
+                  if (value) {
+                    setMonth(value);
+                  }
+                }}
+                date={month}
                 hourCycle={hourCycle}
                 granularity={granularity}
               />

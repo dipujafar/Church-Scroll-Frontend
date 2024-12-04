@@ -21,12 +21,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { eventAttendeesData } from "@/utils/attendees";
 import Autoplay from "embla-carousel-autoplay";
+import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 const carouselImage = ["/event1.png", "/event2.png"];
 
 const SingleEventContainer = () => {
+  const role = useSearchParams()?.get("role");
   return (
     <div>
       <div className="flex-between flex-col lg:flex-row xl:gap-x-10 gap-5">
@@ -84,27 +89,29 @@ const SingleEventContainer = () => {
             Dec 2, 2023, 10:00 AM - 2:00 PM
           </p>
 
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button className="text-lg bg-primary-blue w-full py-5">
-                Request to join
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-              <AlertDialogHeader>
-                <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                <AlertDialogDescription>
-                  You are about to join this event!
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter>
-                <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction className="bg-primary-blue hover:bg-black/70">
-                  Continue
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
+          {role !== "churchAdmin" && (
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button className="text-lg bg-primary-blue w-full py-5">
+                  Request to join
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    You are about to join this event!
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction className="bg-primary-blue hover:bg-black/70">
+                    Continue
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          )}
         </div>
       </div>
       <div>
@@ -138,6 +145,69 @@ const SingleEventContainer = () => {
           cases, it is emotional).
         </p>
       </div>
+
+      {role === "churchAdmin" && (
+        <div className="md:mt-10 mt-7">
+          <div className="flex justify-between items-center">
+            <h1 className="md:text-3xl text-xl font-semibold">
+              Attendees (79)
+            </h1>
+            <Link href={`/event-attendees?eventId`}>
+              <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden text-lg truncate flex items-center">
+                View all
+                <ChevronRight
+                  size={24}
+                  color="#9A9CAA"
+                  className="group-hover:translate-x-2 overflow-hidden duration-700"
+                />
+              </p>
+            </Link>
+          </div>
+
+          {/* Attendees people */}
+
+          <Carousel
+            opts={{
+              loop: true,
+              duration: 60,
+              align: "start",
+            }}
+            plugins={[
+              Autoplay({
+                delay: 4000,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true,
+              }),
+            ]}
+            className="w-full mt-8"
+          >
+            <CarouselContent>
+              {eventAttendeesData?.map((data) => (
+                <CarouselItem
+                  key={data?._id}
+                  className="md:basis-1/4 xl:basis-1/8  2xl:basis-1/12"
+                >
+                  <div className="p-1">
+                    <Link href={`/event-attendees?eventId=${data?._id}`}>
+                      <div className="bg-primary-color p-2 flex flex-col justify-center items-center rounded-md gap-y-2">
+                        <Image
+                          src={data?.image}
+                          alt="church_image"
+                          width={1200}
+                          height={1200}
+                          className="size-20 rounded-full"
+                        ></Image>
+                        <p className="text-xl font-medium">{data?.name}</p>
+                        <p className="text-black/80">{data?.position}</p>
+                      </div>
+                    </Link>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+      )}
     </div>
   );
 };

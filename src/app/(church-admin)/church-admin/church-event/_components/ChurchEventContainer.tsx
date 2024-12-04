@@ -1,3 +1,4 @@
+"use client";
 import EventCard from "@/components/shared/EventCard";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,11 +8,17 @@ import {
 } from "@/components/ui/hover-card";
 import { eventData } from "@/utils/event-data";
 import { Trash2 } from "lucide-react";
+import AddEventModal from "./AddEventModal";
+import { useState } from "react";
 
 const ChurchEventContainer = () => {
+  const [addEvent, setAddEvent] = useState(false);
   return (
     <div>
-      <Button className="bg-primary-blue w-full hover:bg-primary-blue/80">
+      <Button
+        onClick={() => setAddEvent(true)}
+        className="bg-primary-blue w-full hover:bg-primary-blue/80"
+      >
         Create Event
       </Button>
 
@@ -44,6 +51,7 @@ const ChurchEventContainer = () => {
           </div>
         ))}
       </div>
+      <AddEventModal open={addEvent} setOpen={setAddEvent}></AddEventModal>
     </div>
   );
 };
