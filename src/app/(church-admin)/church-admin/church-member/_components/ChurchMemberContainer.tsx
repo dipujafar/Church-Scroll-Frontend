@@ -45,7 +45,7 @@ const ChurchMemberContainer = () => {
                       Are you sure !
                     </h4>
                     <p className="text-sm">
-                      Do you want to delete your Church member profile ?
+                      Do you want to delete this Church member profile ?
                     </p>
                     <div className="flex justify-center">
                       <Button className=" bg-primary-blue">Confirm</Button>
