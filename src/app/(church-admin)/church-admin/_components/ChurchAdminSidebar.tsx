@@ -48,7 +48,7 @@ const ChurchAdminSidebar = () => {
       key: "church-events",
       label: "Events",
       icon: <Calendar1 size={25} color="#8A8A8A" />,
-      href: "/church-admin/church-events",
+      href: "/church-admin/church-event",
     },
     {
       key: "manage-subscription",

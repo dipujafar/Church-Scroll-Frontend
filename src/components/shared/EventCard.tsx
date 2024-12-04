@@ -38,7 +38,7 @@ const EventCard = ({ data, btn = true }: { data: TEvent; btn?: boolean }) => {
             {data?.date}
           </div>
           {btn && (
-            <Link href={`/events/${data?._id}`}>
+            <Link href={`/events/${data?._id}?role=churchAdmin`}>
               <Button className="mt-5 w-full bg-primary-blue hover:bg-black/60 hover:animate-pulse">
                 View More
               </Button>

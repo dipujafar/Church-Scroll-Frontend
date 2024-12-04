@@ -5,6 +5,11 @@ import { useState } from "react";
 import { memberData } from "@/utils/member-data";
 import ChurchAdminMemberCard from "@/components/shared/ChurchAdminMemberCard";
 import { Trash2 } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const ChurchMemberContainer = () => {
   const [openAddMemberModal, setOpenAddMemberModal] = useState(false);
@@ -26,9 +31,29 @@ const ChurchMemberContainer = () => {
               key={member?._id}
               data={member}
             ></ChurchAdminMemberCard>
-            <div className="absolute top-1 right-1 bg-pink-100 rounded-full p-2 cursor-pointer ">
-              <Trash2 size={20} color="red"></Trash2>
-            </div>
+
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <div className="absolute top-1 right-1 bg-pink-100 rounded-full p-2 cursor-pointer ">
+                  <Trash2 size={20} color="red"></Trash2>
+                </div>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-fit">
+                <div className="flex justify-between space-x-4">
+                  <div className="space-y-3">
+                    <h4 className=" font-semibold text-center text-red-500 text-xl">
+                      Are you sure !
+                    </h4>
+                    <p className="text-sm">
+                      Do you want to delete your Church member profile ?
+                    </p>
+                    <div className="flex justify-center">
+                      <Button className=" bg-primary-blue">Confirm</Button>
+                    </div>
+                  </div>
+                </div>
+              </HoverCardContent>
+            </HoverCard>
           </div>
         ))}
       </div>
