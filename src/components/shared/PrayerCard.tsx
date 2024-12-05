@@ -1,14 +1,20 @@
 import { TPrayerRequest } from "@/type";
 import Image from "next/image";
-import React from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
+import { ReactNode } from "react";
 
-const PrayerCard = ({ data }: { data: TPrayerRequest }) => {
+const PrayerCard = ({
+  data,
+  children,
+}: {
+  data: TPrayerRequest;
+  children?: ReactNode;
+}) => {
   return (
     <div className="p-3 space-y-2 border hover:border-black hover:shadow-xl duration-500 rounded-md">
       <div className="flex gap-x-3">
@@ -48,6 +54,7 @@ const PrayerCard = ({ data }: { data: TPrayerRequest }) => {
           ""
         )}
       </p>
+      {children}
     </div>
   );
 };

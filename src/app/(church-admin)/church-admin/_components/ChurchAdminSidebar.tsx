@@ -66,7 +66,7 @@ const ChurchAdminSidebar = () => {
       key: "prayerRequest",
       label: "Prayer Request",
       icon: <SignpostBig size={25} color="#8A8A8A" />,
-      href: "/church-admin/prayer-request",
+      href: "/church-admin/church-prayer-request",
     },
   ];
 
