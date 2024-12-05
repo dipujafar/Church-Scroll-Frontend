@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import google from "@/assets/icons/google.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // Define form data types
 interface FormData {
@@ -24,6 +25,7 @@ interface FormData {
 
 const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const {
     register,
@@ -32,7 +34,22 @@ const SignInForm = () => {
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
-    console.log(data);
+    localStorage.setItem("user", JSON.stringify(data));
+
+    if (data?.email === "user@gmail.com") {
+      localStorage.setItem("role", "user");
+      router.push("/user/profile");
+    }
+
+    if (data?.email === "churchadmin@gmail.com") {
+      localStorage.setItem("role", "churchAdmin");
+      router.push("/church-admin/church-admin-profile");
+    }
+
+    if (data?.email === "churchmember@gmail.com") {
+      localStorage.setItem("role", "churchMember");
+      router.push("/church-member-info");
+    }
   };
 
   return (

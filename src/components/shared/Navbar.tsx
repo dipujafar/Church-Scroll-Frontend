@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import logo from "@/assets/image/logo.png";
 import dummyProfile from "@/assets/image/dummy-profile.png";
@@ -7,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
+import { useEffect, useState } from "react";
 const navLinks = [
   {
     label: "Explore",
@@ -23,10 +25,15 @@ const navLinks = [
 ];
 
 const Navbar = ({ className }: { className?: string }) => {
-  let user = false;
+  const [user, setUser] = useState(false);
+
+  useEffect(() => {
+    localStorage.getItem("user") ? setUser(true) : setUser(false);
+  }, [user]);
+
   return (
     <div className={cn(className)}>
-      <Container className="flex-between  py-4">
+      <Container className="flex-between py-4">
         <Link href="/">
           <Image src={logo} alt="logo"></Image>
         </Link>

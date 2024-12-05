@@ -122,6 +122,7 @@ const UserDashboardSidebar = () => {
             <button
               onClick={() => {
                 router.push("/sign-in");
+                localStorage.removeItem("user");
               }}
               type="button"
               className="flex items-center gap-x-3 px-5 py-4 text-lg text-gray-scale-600"
