@@ -14,7 +14,7 @@ const ChurchAdminTemplate = ({ children }: { children: ReactNode }) => {
           <div className="lg:sticky lg:top-40">
             <ChurchAdminSidebar></ChurchAdminSidebar>
           </div>
-          <div className="flex-grow overflow-hidden">{children}</div>
+          <div className="flex-grow ">{children}</div>
         </Container>
       </div>
     </div>

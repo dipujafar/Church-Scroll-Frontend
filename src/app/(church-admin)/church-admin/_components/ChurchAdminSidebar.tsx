@@ -51,10 +51,10 @@ const ChurchAdminSidebar = () => {
       href: "/church-admin/church-event",
     },
     {
-      key: "manage-subscription",
-      label: "Manage Subscription",
+      key: "my-subscription",
+      label: "My Subscription",
       icon: <CircleDollarSign size={25} color="#8A8A8A" />,
-      href: "/church-admin/manage-subscription",
+      href: "/church-admin/my-subscription",
     },
     {
       key: "sponsorChurch",
