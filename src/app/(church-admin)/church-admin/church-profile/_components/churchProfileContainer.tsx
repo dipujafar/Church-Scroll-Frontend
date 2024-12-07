@@ -7,6 +7,8 @@ import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { ImageUpload, UploadedImage } from "@/components/ui/upload-images";
 import { PhotoUpload } from "@/components/ui/upload-photo";
+import ChurchLocationInMap from "./ChurchLocationInMap";
+import { Button } from "@/components/ui/button";
 
 const ChurchProfileContainer = () => {
   const [images, setImages] = useState<UploadedImage[]>([]);
@@ -71,6 +73,13 @@ const ChurchProfileContainer = () => {
             height={1200}
             className="w-auto mx-auto h-full"
           ></Image>
+        </div>
+        <div className="mt-10">
+          <h1 className="font-semibold text-lg mb-2">Location</h1>
+          <div className="flex justify-end mb-2">
+            <Button className="bg-primary-blue">Change Location</Button>
+          </div>
+          <ChurchLocationInMap></ChurchLocationInMap>
         </div>
       </div>
     </div>

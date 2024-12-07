@@ -68,10 +68,12 @@ const SingleChurch = () => {
           <h1 className="md:text-4xl text-xl font-semibold">
             Hope Community Church
           </h1>
-          <div className="mt-1 flex items-center gap-x-2 underline text-light-blue">
-            <Image src={locationArrowIcon} alt="location_arrow_icon"></Image>
-            <p className="text-lg">1.2 km from Location</p>
-          </div>
+          <Link href="/church-location">
+            <div className="mt-1 flex items-center gap-x-2 underline text-light-blue">
+              <Image src={locationArrowIcon} alt="location_arrow_icon"></Image>
+              <p className="text-lg">1.2 km from Location</p>
+            </div>
+          </Link>
         </div>
         <div>
           <Link href="/prayer-request">
