@@ -38,11 +38,17 @@ const Navbar = ({ className }: { className?: string }) => {
           <Image src={logo} alt="logo"></Image>
         </Link>
 
-        {/*  */}
-        <ul className="md:flex gap-x-5 items-center hidden ">
+        <ul className="md:flex gap-x-5 items-center hidden">
           {navLinks.map((link) => (
-            <li key={link.href} className="text-lg font-medium">
-              <Link href={link.href}>{link.label}</Link>
+            <li key={link.href} className="relative text-lg font-medium group ">
+              <Link
+                href={link.href}
+                className="block group-hover:text-primary-blue"
+              >
+                {link.label}
+              </Link>
+              <span className="absolute left-0 bottom-0 h-[2px] w-full bg-black transform scale-x-0 transition-transform duration-700 ease-in-out group-hover:scale-x-100 origin-left"></span>
+              <span className="absolute left-0 bottom-0 h-[2px] w-full bg-black transform scale-x-0 transition-transform duration-700 ease-in-out group-hover:scale-x-100 origin-right"></span>
             </li>
           ))}
         </ul>

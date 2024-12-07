@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import bgImage from "@/assets/home/GetInTouch/getInTouchBg.png";
+import Link from "next/link";
 
 const GetInTouch = () => {
   return (
@@ -19,9 +20,13 @@ const GetInTouch = () => {
           Have questions, suggestions, or just want to say hello? We're here for
           you.
         </p>
-        <Button className="bg-[#1C618B] font-bold lg:py-7 lg:text-lg hover:bg-black/50 duration-300">
-          Contact Us
-        </Button>
+        <div className="mt-4">
+          <Link href={"/contact-us"}>
+            <Button className="bg-[#1C618B] font-bold lg:py-7 lg:text-lg hover:bg-black/50 duration-300">
+              Contact Us
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

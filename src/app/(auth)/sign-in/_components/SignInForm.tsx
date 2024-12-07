@@ -43,7 +43,7 @@ const SignInForm = () => {
 
     if (data?.email === "churchadmin@gmail.com") {
       localStorage.setItem("role", "churchAdmin");
-      router.push("/church-admin/church-admin-profile");
+      router.push("/church-admin/church-profile");
     }
 
     if (data?.email === "churchmember@gmail.com") {

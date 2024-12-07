@@ -24,7 +24,7 @@ const ContactUsForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="lg:w-4/5 mx-auto">
+    <form onSubmit={handleSubmit(onSubmit)} className="lg:w-3/4 mx-auto w-full">
       <div className="mt-6 w-full space-y-5">
         {/* input first name and last name */}
         <div className="flex flex-col items-center gap-x-8 gap-y-5 md:flex-row">
