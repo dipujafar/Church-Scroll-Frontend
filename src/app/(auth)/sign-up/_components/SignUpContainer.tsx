@@ -38,8 +38,8 @@ const SignUpContainer = () => {
       {/* Footer with link to register */}
       <CardFooter className="flex justify-center gap-1">
         <p className="text-secondary-gray">Already have an account?</p>
-        <Link href={"/sing-in"}>
-          <span className="text-lg text-green-600 font-medium"> Sign Up</span>
+        <Link href={"/sign-in"}>
+          <span className="text-lg text-green-600 font-medium"> Sign In</span>
         </Link>
       </CardFooter>
     </Card>

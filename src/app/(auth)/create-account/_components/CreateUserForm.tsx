@@ -18,6 +18,7 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import inputIcon from "@/assets/icons/inputIcon.png";
+import { useRouter, useSearchParams } from "next/navigation";
 
 // Define form data types
 interface FormData {
@@ -32,6 +33,8 @@ const CreateAccountForm = () => {
   const [showConfirmPassword, setConfirmShowPassword] = useState(false);
   const [fileName, setFileName] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const role = useSearchParams().get("role");
+  const router = useRouter();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
@@ -58,6 +61,9 @@ const CreateAccountForm = () => {
   } = useForm<FormData>();
 
   const onSubmit = async (data: FormData) => {
+    if (role == "Administrator") {
+      router.push("/plan-pricing");
+    }
     console.log(data);
   };
 

@@ -15,6 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const MemberProfileContainer = () => {
   const [showReview, setShowReview] = useState(4);
+  const [request, setRequest] = useState(false);
   return (
     <div>
       {/* profile Image section */}
@@ -49,8 +50,28 @@ const MemberProfileContainer = () => {
             Certified Christian Counselor and Family Ministry Leader
           </h1>
           <div className="flex items-center gap-x-5">
-            <Button className="bg-primary-blue px-5">Connect</Button>
-            <Image src={messageIcon} alt="message_icon" className="h-8"></Image>
+            {request ? (
+              <Button
+                onClick={() => setRequest(!request)}
+                className="bg-primary-blue px-5 text-red-500"
+              >
+                Cancel Request
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setRequest(!request)}
+                className="bg-primary-blue px-5"
+              >
+                Connect Request
+              </Button>
+            )}
+            <Link href={"/message"}>
+              <Image
+                src={messageIcon}
+                alt="message_icon"
+                className="h-8"
+              ></Image>
+            </Link>
           </div>
         </div>
         {/* about us part */}

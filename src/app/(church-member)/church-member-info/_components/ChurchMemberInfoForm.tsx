@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import CountryStateCitySelector from "@/components/ui/country-state-city-selector";
 import { Checkbox } from "@/components/ui/checkbox";
 import { TagInput } from "@/components/ui/tag-input";
+import { useRouter } from "next/navigation";
 
 // Define form data types
 interface FormData {
@@ -62,6 +63,7 @@ const filterData = [
 const ChurchMemberInfoForm = () => {
   const [fileName, setFileName] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const router = useRouter();
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
@@ -91,6 +93,7 @@ const ChurchMemberInfoForm = () => {
 
   const onSubmit = async (data: FormData) => {
     console.log(data);
+    router.push("/church-member/church-member-profile");
   };
 
   return (

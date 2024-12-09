@@ -48,7 +48,7 @@ const Hero = () => {
 
             <motion.h1
               variants={childrenVariants}
-              className="xl:text-7xl md:text-4xl text-2xl font-bold text-primary-blue"
+              className="2xl:text-7xl lg:text-5xl md:text-4xl text-2xl font-bold text-primary-blue"
             >
               Welcome to <br /> ChurchScroll: <br /> Connect and Grow
             </motion.h1>
