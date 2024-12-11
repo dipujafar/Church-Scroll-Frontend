@@ -19,7 +19,7 @@ const PrayerRequestModal = ({
   const [endTime, setEndTime] = useState<Date | undefined>(undefined);
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="">
+      <DialogContent className="max-h-screen overflow-auto">
         <form className="space-y-4">
           {/* inputs name */}
           <div className="grid w-full  items-center gap-1.5">

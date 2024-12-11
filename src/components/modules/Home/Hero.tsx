@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 const Hero = () => {
   const [isLocationSetOpen, setIsLocationSetOpen] = useState(false);
   return (
-    <div className="bg-primary-color py-16 ">
+    <div className="bg-primary-color py-20">
       <Container className="flex-center flex-col-reverse lg:flex-row min-h-[calc(100vh-280px)] -translate-y-10 gap-x-10 gap-y-5">
         <motion.div
           initial={{ y: "-10%", opacity: 0 }}

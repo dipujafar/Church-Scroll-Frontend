@@ -53,7 +53,7 @@ const SignInForm = () => {
   };
 
   return (
-    <Card className="xl:w-[650px] md:w-[500px] shadow-md ">
+    <Card className="xl:w-[650px] md:w-[500px] shadow-md w-full ">
       <CardHeader>
         <CardTitle className="text-center text-4xl font-semibold">
           Sign In
@@ -144,7 +144,7 @@ const SignInForm = () => {
       </CardContent>
 
       {/* Footer with link to register */}
-      <CardFooter className="flex justify-center gap-1">
+      <CardFooter className="flex justify-center gap-1 truncate">
         <p className="text-secondary-gray">Don&apos;t have an account</p>
         <Link href={"/sign-up"}>
           <span className="text-lg text-green-600 font-medium"> Sign Up</span>

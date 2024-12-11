@@ -20,11 +20,13 @@ const ChurchesPage = () => {
         description="Connect with vibrant church communities active on ChurchScroll."
       ></TopBanner>
       <Container className="mt-5 lg:mt-10">
-        <SectionTitle title="Explore Churches"></SectionTitle>
-        <div className="mt-5 xl:w-[50%] lg:w-[70%] md:w-[85%] mx-auto">
-          <SearchBar></SearchBar>
+        <div id="churches">
+          <SectionTitle title="Explore Churches"></SectionTitle>
+          <div className="mt-5 xl:w-[50%] lg:w-[70%] md:w-[85%] mx-auto">
+            <SearchBar></SearchBar>
+          </div>
+          <ChurchesContainer></ChurchesContainer>
         </div>
-        <ChurchesContainer></ChurchesContainer>
       </Container>
     </div>
   );

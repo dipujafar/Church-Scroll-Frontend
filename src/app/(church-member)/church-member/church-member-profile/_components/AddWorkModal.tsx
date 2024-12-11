@@ -29,7 +29,7 @@ const AddWorkModal = ({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] max-h-screen overflow-auto">
         <DialogHeader>
           <h1 className="text-center font-medium text-lg ">Add Work</h1>
           <ImageUpload onImagesChange={handleImagesChange} maxImages={5} />

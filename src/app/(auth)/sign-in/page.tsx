@@ -9,7 +9,7 @@ const SignInPage = () => {
       <nav className="sticky top-0 z-20 bg-white">
         <Navbar></Navbar>
       </nav>
-      <Container className="mt-5 flex justify-center items-center min-h-[calc(100vh-280px)]">
+      <Container className="mt-5 flex justify-center md:items-center min-h-[calc(100vh-280px)] w-full">
         <SignInForm></SignInForm>
       </Container>
     </>

@@ -36,7 +36,7 @@ const AddEventModal = ({
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="">
+      <DialogContent className="max-h-screen overflow-auto">
         <form className="space-y-4">
           <div>
             <Label>Upload Image</Label>

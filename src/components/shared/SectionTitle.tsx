@@ -1,3 +1,10 @@
+"use client";
+import AnimatedText from "@/animation/AnimatedText";
+import {
+  childrenVariants,
+  parentVariants,
+} from "@/animation/framerMotionVariants";
+import { motion } from "framer-motion";
 const SectionTitle = ({
   title,
   subTitle,
@@ -6,14 +13,31 @@ const SectionTitle = ({
   subTitle?: string;
 }) => {
   return (
-    <div className="text-center space-y-2">
-      <h1 className="md:text-5xl text-2xl font-semibold">{title}</h1>
+    <motion.div
+      variants={parentVariants}
+      initial="initial"
+      whileInView="animate"
+      exit="exit"
+      viewport={{ once: true }}
+      className="text-center space-y-2"
+    >
+      <motion.h1
+        variants={childrenVariants}
+        className="md:text-5xl text-2xl font-semibold"
+      >
+        <AnimatedText duration={0.01} delay={0.06}>
+          {title}
+        </AnimatedText>
+      </motion.h1>
       {subTitle && (
-        <p className="text-black/60 md:text-xl lg:max-w-[80%] 2xl:w-[70%] mx-auto">
+        <motion.p
+          variants={childrenVariants}
+          className="text-black/60 md:text-xl lg:max-w-[80%] 2xl:w-[70%] mx-auto"
+        >
           {subTitle}
-        </p>
+        </motion.p>
       )}
-    </div>
+    </motion.div>
   );
 };
 

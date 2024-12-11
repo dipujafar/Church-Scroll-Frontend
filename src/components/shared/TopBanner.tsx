@@ -1,5 +1,11 @@
+"use client";
 import { cn } from "@/lib/utils";
 import Container from "./Container";
+import { motion } from "framer-motion";
+import {
+  childrenVariants,
+  parentVariants,
+} from "@/animation/framerMotionVariants";
 
 type TPropsType = {
   image: string;
@@ -20,14 +26,27 @@ const TopBanner = ({ image, title, description, className }: TPropsType) => {
       <Container>
         <div className="overflow-x-hidden">
           <div className="absolute   top-1/2 left-1/2 -translate-x-1/2 transform -translate-y-1/2 w-full ">
-            <div className="  space-y-3 ">
-              <h1 className=" lg:text-6xl md:text-5xl text-3xl font-bold text-center max-w-5xl mx-auto">
+            <motion.div
+              variants={parentVariants}
+              initial="initial"
+              whileInView="animate"
+              exit="exit"
+              viewport={{ once: true }}
+              className="  space-y-3 "
+            >
+              <motion.h1
+                variants={childrenVariants}
+                className="lg:text-6xl md:text-5xl text-3xl font-bold text-center max-w-5xl mx-auto"
+              >
                 {title}
-              </h1>
-              <p className="md:text-2xl font-medium text-center max-w-5xl mx-auto ">
+              </motion.h1>
+              <motion.p
+                variants={childrenVariants}
+                className="md:text-2xl font-medium text-center max-w-5xl mx-auto "
+              >
                 {description}
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           </div>
         </div>
       </Container>

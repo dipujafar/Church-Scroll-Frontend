@@ -9,7 +9,7 @@ const TransactionDetailsModal = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent>
+      <DialogContent className="max-h-screen overflow-auto">
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">Transaction Details</h2>
           <div className="flex justify-between items-center  bg-gray-100 px-2 py-2 rounded-lg">

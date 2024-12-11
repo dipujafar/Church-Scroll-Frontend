@@ -31,7 +31,7 @@ const AddMemberModal = ({
   const { control, setValue, register } = useForm();
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent>
+      <DialogContent className="max-h-screen overflow-auto">
         <DialogHeader>
           <h1 className="text-center font-medium text-2xl text-primary-blue ">
             Member Details

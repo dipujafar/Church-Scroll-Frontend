@@ -17,13 +17,10 @@ import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import ChurchMembers from "./ChurchMembers";
 import Events from "@/components/shared/Events";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+import CreateSpecificSponsorModal from "@/components/shared/CreateSpecificSponsorModal";
 const SingleChurch = () => {
   const [currentTab, setCurrentTab] = useState(0);
+  const [openSponsorModal, setOpenSponsorModal] = useState(false);
   return (
     <div>
       {/* church Carousel */}
@@ -84,21 +81,14 @@ const SingleChurch = () => {
               Prayer Request
             </Button>
           </Link>
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button
-                className="bg-primary-blue hover:bg-black/7
+
+          <Button
+            onClick={() => setOpenSponsorModal(true)}
+            className="bg-primary-blue hover:bg-black/7
            duration-300"
-              >
-                Sponsor a church
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-80">
-              <p>
-                It will redirect Stript payment form when implement backend.
-              </p>
-            </PopoverContent>
-          </Popover>
+          >
+            Sponsor a church
+          </Button>
         </div>
       </div>
       {/* Tabs */}
@@ -189,6 +179,10 @@ const SingleChurch = () => {
         </div>
         <Events></Events>
       </div>
+      <CreateSpecificSponsorModal
+        open={openSponsorModal}
+        setOpen={setOpenSponsorModal}
+      ></CreateSpecificSponsorModal>
     </div>
   );
 };

@@ -14,15 +14,15 @@ const Footer = () => {
       <Container>
         <div className="flex flex-col flex-wrap xl:justify-between justify-center gap-y-10 gap-x-2 md:flex-row">
           {/* Logo and description */}
-          <div className="">
+          <div>
             <Image
               src={logo}
               alt="logo"
               width={1200}
               height={1200}
-              className="w-auto h-auto"
+              className="w-auto h-auto mx-auto"
             />
-            <p className="mt-4 max-w-[320px] text-primary-white/70">
+            <p className="mt-4 max-w-[320px] text-primary-white/70 mx-auto">
               Dedicated to fostering community, growth, and service,
               ChurchScroll.com is a place where everyone is welcome to connect
               and thrive.
@@ -34,7 +34,6 @@ const Footer = () => {
             {/* Account Links */}
             <div>
               <h3 className="mb-4 font-semibold text-primary-white">
-                {" "}
                 Get Involved
               </h3>
               <ul className="space-y-2 text-primary-white">
@@ -43,7 +42,7 @@ const Footer = () => {
                 </li>
 
                 <li>
-                  <Link href="/#">Pricing</Link>
+                  <Link href="/plan-pricing">Pricing</Link>
                 </li>
               </ul>
             </div>

@@ -68,7 +68,7 @@ const CreateAccountForm = () => {
   };
 
   return (
-    <Card className="xl:w-[650px] md:w-[500px] shadow-md ">
+    <Card className="xl:w-[650px] md:w-[500px] shadow-md w-full">
       <CardHeader>
         <CardTitle className="text-center text-4xl font-semibold">
           Create Account

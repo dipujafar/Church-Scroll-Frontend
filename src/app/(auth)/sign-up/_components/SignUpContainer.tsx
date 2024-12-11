@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const SignUpContainer = () => {
   return (
-    <Card className="xl:w-[550px] md:w-[500px] shadow-md ">
+    <Card className="xl:w-[550px] md:w-[500px] shadow-md w-full ">
       <CardHeader>
         <CardTitle className="text-center text-4xl font-semibold">
           Sign Up
@@ -36,7 +36,7 @@ const SignUpContainer = () => {
       </CardContent>
 
       {/* Footer with link to register */}
-      <CardFooter className="flex justify-center gap-1">
+      <CardFooter className="flex justify-center gap-1 truncate">
         <p className="text-secondary-gray">Already have an account?</p>
         <Link href={"/sign-in"}>
           <span className="text-lg text-green-600 font-medium"> Sign In</span>

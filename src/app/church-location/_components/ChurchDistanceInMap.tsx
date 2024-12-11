@@ -3,7 +3,6 @@ import envConfig from "@/config/envConfig";
 import {
   GoogleMap,
   Marker,
-  DirectionsService,
   DirectionsRenderer,
   useJsApiLoader,
 } from "@react-google-maps/api";
