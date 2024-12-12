@@ -7,15 +7,16 @@ import SearchBar from "@/components/shared/SearchBar";
 import AnimatedText from "@/animation/AnimatedText";
 import MovementElement from "@/animation/MovementElement";
 import { motion } from "framer-motion";
-import {
-  childrenVariants,
-  parentVariants,
-} from "@/animation/framerMotionVariants";
+
 import { Input } from "@/components/ui/input";
 import { Map, MapPin, MoveUpRight, Search } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import {
+  childrenVariants,
+  parentVariants,
+} from "@/animation/HeroSectionMotion";
 
 const Hero = () => {
   const [isLocationSetOpen, setIsLocationSetOpen] = useState(false);
@@ -23,10 +24,10 @@ const Hero = () => {
     <div className="bg-primary-color py-20">
       <Container className="flex-center flex-col-reverse lg:flex-row min-h-[calc(100vh-280px)] -translate-y-10 gap-x-10 gap-y-5">
         <motion.div
-          initial={{ y: "-10%", opacity: 0 }}
+          initial={{ y: "10%", opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          exit={{ y: "-10%", opacity: 0 }}
+          exit={{ y: "10%", opacity: 0 }}
           className="flex-1"
         >
           <motion.div
