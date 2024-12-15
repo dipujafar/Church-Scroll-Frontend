@@ -62,7 +62,7 @@ const AddPrayerRequest = () => {
     <Dialog>
       <DialogTrigger asChild>
         <Button className="bg-primary-blue text-white w-full">
-          Add Prayer
+          Add Prayer Request
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-screen overflow-auto">

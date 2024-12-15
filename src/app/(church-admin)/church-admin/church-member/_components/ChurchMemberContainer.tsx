@@ -20,7 +20,7 @@ const ChurchMemberContainer = () => {
         onClick={() => setOpenAddMemberModal(true)}
         className="bg-primary-blue w-full hover:bg-primary-blue/80"
       >
-        Add Member
+        Generate Code
       </Button>
 
       {/* existing members */}

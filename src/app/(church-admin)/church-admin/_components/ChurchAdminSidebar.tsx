@@ -40,7 +40,7 @@ const ChurchAdminSidebar = () => {
 
     {
       key: "members",
-      label: "Members",
+      label: "Members and code",
       icon: <Users size={25} color="#8A8A8A" />,
       href: "/church-admin/church-member",
     },

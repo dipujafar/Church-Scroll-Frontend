@@ -25,9 +25,7 @@ const SectionTitle = ({
         variants={childrenVariants}
         className="md:text-5xl text-2xl font-semibold"
       >
-        <AnimatedText duration={0.01} delay={0.06}>
-          {title}
-        </AnimatedText>
+        {title}
       </motion.h1>
       {subTitle && (
         <motion.p

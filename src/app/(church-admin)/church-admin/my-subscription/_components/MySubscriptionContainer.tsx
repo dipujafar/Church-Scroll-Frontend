@@ -3,13 +3,13 @@ import Link from "next/link";
 
 const MySubscriptionContainer = () => {
   return (
-    <div className=" bg-primary-color py-7 px-5 rounded-xl gap-y-5 space-y-5 xl:w-[70%] mx-auto mt-5">
+    <div className=" bg-primary-color py-7 px-5 rounded-xl gap-y-5 space-y-2 xl:w-[70%] mx-auto mt-5">
       <h1 className="md:text-4xl text-2xl font-semibold capitalize">Monthly</h1>
+      <p> For 1-500 Church Members</p>
       <p className="text-lg">
         Church admins who need short-term access or want to try out
         ChurchScroll's features without a long-term commitment.
       </p>
-
       <div className="flex justify-between items-center">
         <h2 className="md:text-4xl text-2xl font-semibold capitalize">
           $29/month

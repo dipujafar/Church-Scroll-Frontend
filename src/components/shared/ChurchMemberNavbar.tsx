@@ -26,7 +26,7 @@ const ChurchMemberNavbar = ({ className }: { className?: string }) => {
               alt="profile"
               width={1200}
               height={12000}
-              className="size-20 cursor-pointer"
+              className="size-12 cursor-pointer"
             ></Image>
           </Link>
         </div>

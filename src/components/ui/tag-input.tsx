@@ -22,7 +22,7 @@ export const TagInput: React.FC<TagInputProps> = ({ value = [], onChange }) => {
   };
 
   return (
-    <div className="flex flex-wrap items-center gap-2 p-2 border rounded-md">
+    <div className="flex flex-wrap items-center gap-2 p-2 border rounded-md bg-gray-100">
       {value.map((tag, index) => (
         <span
           key={index}
@@ -43,8 +43,8 @@ export const TagInput: React.FC<TagInputProps> = ({ value = [], onChange }) => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
-        className="flex-grow outline-none h-10"
-        placeholder="Type and press Enter to add tags"
+        className="flex-grow outline-none h-8 bg-gray-100"
+        placeholder="Type and press enter to add tags"
       />
     </div>
   );

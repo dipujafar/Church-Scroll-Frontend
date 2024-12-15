@@ -1,22 +1,36 @@
+import PriceContactModal from "@/components/shared/PriceContactModal";
 import { Button } from "@/components/ui/button";
+import { Dot } from "lucide-react";
 
 const PlanPricingContainer = () => {
   const packages = [
     {
       _id: 1,
-      duration: "monthly",
-      price: 29,
+      monthlyPlan: {
+        duration: "monthly",
+        price: 29,
+      },
+      yearlyPlan: {
+        duration: "yearly",
+        price: 299,
+      },
       title: "Flexible Monthly Plan",
-      description:
-        "Church admins who need short-term access or want to try out ChurchScroll's features without a long-term commitment.",
+
+      memberLimit: "1-500",
     },
     {
-      _id: 2,
-      duration: "yearly",
-      price: 299,
-      title: "Best Value Annual Plan",
-      description:
-        "Church admins who want year-round access to all key ChurchScroll features and save with an annual commitment.",
+      _id: 1,
+      monthlyPlan: {
+        duration: "monthly",
+        price: 55,
+      },
+      yearlyPlan: {
+        duration: "yearly",
+        price: 549,
+      },
+      title: "Flexible Monthly Plan",
+
+      memberLimit: "501-1,000",
     },
   ];
   return (
@@ -29,29 +43,71 @@ const PlanPricingContainer = () => {
       </div>
       {/* subscription packages */}
 
-      <div className="mt-10 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2  gap-5 xl:w-[60%] mx-auto">
+      <div className="mt-10 grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-5 xl:w-[90%] mx-auto">
         {packages.map((data) => (
-          <div className="flex flex-col justify-center items-center bg-primary-color py-7 px-5 rounded-xl gap-y-5 text-center">
-            <h1 className="text-2xl font-semibold capitalize">
-              {data?.duration}
+          <div className="flex flex-col justify-center items-center bg-primary-color py-7 px-5 rounded-xl gap-y-3 text-center">
+            <h1 className=" font-medium text-black/80">
+              For {data?.memberLimit} Church Members
             </h1>
+
+            {/* monthly plan */}
             <div>
               <h3 className="text-2xl font-semibold">
-                ${data?.price}/
-                <span className="text-lg font-medium">
-                  {data?.duration === "yearly" ? "year" : "month"}
-                </span>
+                ${data?.monthlyPlan?.price}/
+                <span className="text-lg font-medium">monthly</span>
+                <br />
               </h3>
-              <p className="text-lg font-medium text-black">{data?.title}</p>
+              <p className="text-lg font-medium text-black">
+                Flexible Monthly Plan
+              </p>
             </div>
 
-            <p>{data?.description}</p>
+            <p className="text-xl font-medium text-black">or</p>
 
-            <Button className="bg-primary-blue  w-[60%] hover:bg-primary-blue/80">
-              Get Started
-            </Button>
+            <div>
+              <h3 className="text-2xl font-semibold">
+                ${data?.yearlyPlan?.price}/
+                <span className="text-lg font-medium">yearly</span>
+                <br />
+              </h3>
+              <p className="text-lg font-medium text-black">
+                Flexible Yearly Plan
+              </p>
+            </div>
+
+            <div className="flex justify-center gap-x-3">
+              <Button
+                variant={"outline"}
+                className="border-primary-blue text-primary-blue"
+              >
+                Monthly
+              </Button>
+              <Button className="bg-primary-blue   hover:bg-primary-blue/80">
+                Yearly
+              </Button>
+            </div>
           </div>
         ))}
+        {/* custom plan */}
+        <div className=" bg-primary-color py-7 px-5 rounded-xl space-y-5 text-center">
+          <h1 className=" text-2xl font-medium text-black/80">
+            For 1,001+ Church Members
+          </h1>
+
+          {/* features */}
+          <div className="min-h-[150px] ">
+            <p className="text-lg">Please contact for pricing</p>
+          </div>
+
+          <PriceContactModal></PriceContactModal>
+        </div>
+      </div>
+
+      <div>
+        <p className="text-center mt-10 text-lg max-w-sm mx-auto text-primary-blue">
+          **If your church would like to join but does not have the budget,
+          please contact us!
+        </p>
       </div>
     </div>
   );

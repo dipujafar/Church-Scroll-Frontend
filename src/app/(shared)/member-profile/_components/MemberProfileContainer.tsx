@@ -76,7 +76,7 @@ const MemberProfileContainer = () => {
         </div>
         {/* about us part */}
         <div className="md:-translate-y-10 -translate-y-5 space-y-2">
-          <h1 className="section-title">About Us</h1>
+          <h1 className="section-title">About Me</h1>
           <p className="text-black/80 text-lg">
             Sister Maria is a licensed counselor with a specialty in family
             dynamics and faith-based counseling. She leads sessions on
@@ -87,14 +87,14 @@ const MemberProfileContainer = () => {
 
         {/* services part */}
         <div className="space-y-2 mb-5">
-          <h1 className="section-title">Service </h1>
+          <h1 className="section-title">What I Do </h1>
           <div className="mt-2 py-1 px-4 rounded-full bg-primary-blue/90 w-fit text-white">
             Digital Services
           </div>
         </div>
         {/* services tag */}
         <div className="space-y-2">
-          <h1 className="section-title">Service Tag</h1>
+          <h1 className="section-title">Hashtags</h1>
           <div className="mrt-2 flex gap-3 flex-wrap">
             <div className="py-1 px-4 rounded-full bg-primary-blue/90 w-fit text-white">
               Graphics Design
@@ -128,7 +128,7 @@ const MemberProfileContainer = () => {
 
         {/* activity section */}
         <div className="space-y-2 md:mt-16  mt-8">
-          <h1 className="section-title">Activity</h1>
+          <h1 className="section-title">Activities</h1>
           <div className="flex  justify-end ">
             <Link href="/member-activities">
               <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">

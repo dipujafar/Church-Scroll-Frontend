@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import bgImage from "@/assets/home/GetInTouch/getInTouchBg.png";
+import bgImage from "@/assets/home/GetInTouch/getInTouchBg.jpg";
 import Link from "next/link";
 
 const GetInTouch = () => {
@@ -9,7 +9,7 @@ const GetInTouch = () => {
       <Image
         src={bgImage}
         alt="Prayer_mage"
-        className="w-full rounded-xl min-h-[220px]"
+        className="w-full rounded-xl 2xl:max-h-[420px] xl:max-h-[350px] lg:max-h-[320px] md:max-h-[220px] max-h-[200px]"
       ></Image>
 
       <div className="space-y-3 absolute inset-0   text-white   2xl:pt-32 lg:pt-16 md:pt-10  pt-4 lg:pl-16 pl-5 bg-gradient-to-r from-[#31454E] to-transparent rounded-xl">

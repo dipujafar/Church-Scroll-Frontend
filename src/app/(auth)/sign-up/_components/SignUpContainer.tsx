@@ -33,6 +33,13 @@ const SignUpContainer = () => {
             </Button>
           </Link>
         </div>
+        <div className="mt-3">
+          <Link href={`/church-member-info`} className="flex-1">
+            <Button className="w-full py-7 bg-primary-blue hover:bg-primary-blue/90">
+              Church Member
+            </Button>
+          </Link>
+        </div>
       </CardContent>
 
       {/* Footer with link to register */}

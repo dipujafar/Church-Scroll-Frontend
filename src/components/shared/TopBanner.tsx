@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import {
   childrenVariants,
   parentVariants,
-} from "@/animation/framerMotionVariants";
+} from "@/animation/HeroSectionMotion";
 
 type TPropsType = {
   image: string;
   title: string;
-  description: string;
+  description?: string;
   className?: string;
 };
 

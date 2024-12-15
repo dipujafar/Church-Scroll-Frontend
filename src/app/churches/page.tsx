@@ -15,9 +15,10 @@ const ChurchesPage = () => {
     <div className="relative">
       <Navbar className="absolute top-0 z-20 w-full"></Navbar>
       <TopBanner
-        image="/featuredBg.webp"
+        image="/curchesBg.png"
         title="Featured Churches"
         description="Connect with vibrant church communities active on ChurchScroll."
+        className="bg- bg-center"
       ></TopBanner>
       <Container className="mt-5 lg:mt-10">
         <div id="churches">

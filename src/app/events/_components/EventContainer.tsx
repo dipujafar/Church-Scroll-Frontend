@@ -28,7 +28,6 @@ const EventContainer = () => {
           <TopBanner
             image="/eventsBg.png"
             title="Church Community Events"
-            description="ChurchScroll offers a suite of features designed to enhance your community experience. From privacy settings to event management, we empower members to connect safely and meaningfully."
             className="text-white"
           ></TopBanner>
         )}

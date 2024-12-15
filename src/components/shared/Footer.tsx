@@ -24,8 +24,8 @@ const Footer = () => {
             />
             <p className="mt-4 max-w-[320px] text-primary-white/70 mx-auto">
               Dedicated to fostering community, growth, and service,
-              ChurchScroll.com is a place where everyone is welcome to connect
-              and thrive.
+              ChurchScroll.com is a place where church communities are welcome
+              to connect and thrive.
             </p>
           </div>
 

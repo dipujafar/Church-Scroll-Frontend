@@ -16,6 +16,16 @@ import CountryStateCitySelector from "@/components/ui/country-state-city-selecto
 import { Checkbox } from "@/components/ui/checkbox";
 import { TagInput } from "@/components/ui/tag-input";
 import { useRouter } from "next/navigation";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { DatePicker } from "@/components/ui/date-picker";
+import { PhoneInput } from "@/components/ui/phone-input";
 
 // Define form data types
 interface FormData {
@@ -100,7 +110,7 @@ const ChurchMemberInfoForm = () => {
     <Card className="xl:w-[650px] md:w-[500px] shadow-md ">
       <CardHeader>
         <CardTitle className="text-center md:text-3xl text-xl font-semibold">
-          Some details about you
+          Create Church Member Profile
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -163,7 +173,7 @@ const ChurchMemberInfoForm = () => {
           <div className="grid w-full items-center gap-4">
             {/* Input Name */}
             <div className="flex flex-col space-y-1.5">
-              <Label className=" text-lg font-light text-primary-black/80">
+              <Label className=" text-lg font-semibold text-primary-black/80">
                 Name
               </Label>
               <Input
@@ -173,14 +183,83 @@ const ChurchMemberInfoForm = () => {
                 {...register("name", {
                   required: "Name is required",
                 })}
+                className="w-full bg-gray-100 py-6"
               />
               {errors.name && (
                 <p className="text-sm text-red-500">{errors.name.message}</p>
               )}
             </div>
+
+            <div className="grid gap-1.5">
+              <Label className="font-semibold text-lg">Email</Label>
+              <Input
+                type="email"
+                id="email"
+                className="w-full bg-gray-100 py-6"
+              />
+            </div>
+
+            {/* input title */}
+            <div className="grid gap-1.5">
+              <Label className="font-semibold text-lg">Title</Label>
+              <Input id="title" className="w-full bg-gray-100 py-6" />
+            </div>
+
+            {/* input Gender */}
+            <div className="grid w-full  items-center gap-1.5">
+              <Label className="font-semibold text-lg">Gender</Label>
+              <Select defaultValue="male">
+                <SelectTrigger className="w-full  bg-gray-100 py-6">
+                  <SelectValue placeholder="Gender" />
+                </SelectTrigger>
+                <SelectContent defaultValue={"male"}>
+                  <SelectGroup>
+                    <SelectItem value="male">Male</SelectItem>
+                    <SelectItem value="Female">Female</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* input date of birth */}
+            <div className="grid w-full items-center ">
+              <Label className="font-semibold text-lg text-primary-black/80">
+                Birthday
+              </Label>
+              <DatePicker
+                name="dob"
+                control={control}
+                defaultValue={"Dec 01 2024"}
+                // label="Date of Birth"
+              />
+            </div>
+
+            {/* input contact number*/}
+
+            <div className="grid w-full items-center gap-1.5 ">
+              <Label className="font-semibold text-lg text-primary-black/80">
+                Contact Number
+              </Label>
+              <Controller
+                // @ts-ignore
+                name="phoneNumber"
+                // rules={{ required: "Phone number is required" }}
+                control={control}
+                render={({ field }) => (
+                  <PhoneInput
+                    // @ts-ignore
+                    value={field.value}
+                    onChange={field.onChange}
+                    international
+                    defaultCountry="US"
+                  />
+                )}
+              />
+            </div>
+
             {/* ---- input   Address ---- */}
             <div className="grid w-full  items-center gap-1.5">
-              <Label className=" text-lg font-light text-primary-black/80">
+              <Label className=" text-lg font-semibold text-primary-black/80">
                 Location
               </Label>
               {/*---- input   country ---- */}
@@ -200,7 +279,7 @@ const ChurchMemberInfoForm = () => {
 
             {/* Input Designation */}
             <div className="flex flex-col space-y-1.5">
-              <Label className=" text-lg font-light  text-primary-black/80">
+              <Label className=" text-lg font-semibold  text-primary-black/80">
                 Designation
               </Label>
               <Input
@@ -210,6 +289,7 @@ const ChurchMemberInfoForm = () => {
                 {...register("designation", {
                   required: "Name is required",
                 })}
+                className="w-full bg-gray-100 py-6"
               />
               {errors.designation && (
                 <p className="text-sm text-red-500">
@@ -220,7 +300,7 @@ const ChurchMemberInfoForm = () => {
 
             {/* Input registration code  */}
             <div className="flex flex-col space-y-1.5">
-              <Label className=" text-lg font-light  text-primary-black/80">
+              <Label className=" text-lg font-semibold  text-primary-black/80">
                 Registration Code
               </Label>
 
@@ -231,6 +311,7 @@ const ChurchMemberInfoForm = () => {
                 {...register("registrationCode", {
                   required: "Name is required",
                 })}
+                className="w-full bg-gray-100 py-6"
               />
               {errors.registrationCode && (
                 <p className="text-sm text-red-500">
@@ -266,7 +347,7 @@ const ChurchMemberInfoForm = () => {
               </div>
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label className="text-lg font-light text-primary-black/80">
+              <Label className="text-lg font-semibold text-primary-black/80">
                 Services Tags
               </Label>
 

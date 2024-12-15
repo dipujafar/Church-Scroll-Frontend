@@ -10,14 +10,9 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import CreateSponsorModal from "./CreateSponsorModal";
-import { motion } from "framer-motion";
-import {
-  childrenVariants,
-  parentVariants,
-} from "@/animation/framerMotionVariants";
 const navLinks = [
   {
-    label: "Explore",
+    label: "Churches",
     href: "/churches",
   },
   {
@@ -25,7 +20,7 @@ const navLinks = [
     href: "/events",
   },
   {
-    label: "Resource",
+    label: "Resources",
     href: "/resources",
   },
 ];
@@ -33,9 +28,11 @@ const navLinks = [
 const Navbar = ({
   className,
   btnClass,
+  logoClass,
 }: {
   className?: string;
   btnClass?: string;
+  logoClass?: string;
 }) => {
   const [user, setUser] = useState(false);
   const [openSponsorModal, setOpenSponsorModal] = useState(false);
@@ -48,24 +45,15 @@ const Navbar = ({
     <div className={cn(className)}>
       <Container className="flex-between items-center gap-x-2 py-4">
         <Link href="/" className="">
-          <Image src={logo} alt="logo" className="-translate-y-2 "></Image>
+          <div className={cn(logoClass)}>
+            <Image src={logo} alt="logo" className="-translate-y-2 "></Image>
+          </div>
         </Link>
 
         {/* nav links */}
-        <motion.ul
-          variants={parentVariants}
-          initial="initial"
-          animate="animate"
-          viewport={{ once: true }}
-          exit="exit"
-          className="md:flex lg:gap-x-5 gap-x-2 items-center hidden"
-        >
+        <ul className="md:flex lg:gap-x-5 gap-x-2 items-center hidden">
           {navLinks.map((link) => (
-            <motion.li
-              variants={childrenVariants}
-              key={link.href}
-              className="relative text-lg font-medium group "
-            >
+            <li key={link.href} className="relative text-lg font-medium group ">
               <Link
                 href={link.href}
                 className="block group-hover:text-primary-blue"
@@ -74,9 +62,9 @@ const Navbar = ({
               </Link>
               <span className="absolute left-0 bottom-0 h-[2px] w-full bg-black transform scale-x-0 transition-transform duration-700 ease-in-out group-hover:scale-x-100 origin-left"></span>
               <span className="absolute left-0 bottom-0 h-[2px] w-full bg-black transform scale-x-0 transition-transform duration-700 ease-in-out group-hover:scale-x-100 origin-right"></span>
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
         {user ? (
           <div className="md:flex hidden xl:gap-x-5 gap-x-2 items-center">
             <Button
