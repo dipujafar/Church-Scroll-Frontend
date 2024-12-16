@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import CreateSponsorModal from "./CreateSponsorModal";
+import { useRouter } from "next/navigation";
 const navLinks = [
   {
     label: "Churches",
@@ -35,11 +36,33 @@ const Navbar = ({
   logoClass?: string;
 }) => {
   const [user, setUser] = useState(false);
+  const [email, setEmail] = useState("");
   const [openSponsorModal, setOpenSponsorModal] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     localStorage.getItem("user") ? setUser(true) : setUser(false);
-  }, [user]);
+    const userMail = localStorage.getItem("email");
+    if (!userMail) return;
+    setEmail(userMail);
+  }, [user, email]);
+
+  const handleRedirectUserDashboard = () => {
+    if (email === "user@gmail.com") {
+      router.push("/user/profile");
+      return;
+    }
+    if (email === "churchadmin@gmail.com") {
+      router.push("/church-admin/church-profile");
+      return;
+    }
+    if (email === "churchmember@gmail.com") {
+      router.push("/church-member/church-member-profile");
+      return;
+    }
+
+    router.push("/user/profile");
+  };
 
   return (
     <div className={cn(className)}>
@@ -83,15 +106,15 @@ const Navbar = ({
             <Link href={"/message"}>
               <Mail className="cursor-pointer" />
             </Link>
-            <Link href={"/user/profile"}>
-              <Image
-                src={dummyProfile}
-                alt="profile"
-                width={1200}
-                height={12000}
-                className="size-12 cursor-pointer"
-              ></Image>
-            </Link>
+
+            <Image
+              src={dummyProfile}
+              onClick={() => handleRedirectUserDashboard()}
+              alt="profile"
+              width={1200}
+              height={12000}
+              className="size-12 cursor-pointer"
+            ></Image>
           </div>
         ) : (
           <div className="md:flex hidden lg:gap-x-2 gap-x-1">
@@ -170,15 +193,15 @@ const Navbar = ({
                   <Link href={"/message"}>
                     <Mail className="cursor-pointer" />
                   </Link>
-                  <Link href={"/user/profile"}>
-                    <Image
-                      src={dummyProfile}
-                      alt="profile"
-                      width={1200}
-                      height={12000}
-                      className="size-12 cursor-pointer"
-                    ></Image>
-                  </Link>
+
+                  <Image
+                    src={dummyProfile}
+                    onClick={() => handleRedirectUserDashboard()}
+                    alt="profile"
+                    width={1200}
+                    height={12000}
+                    className="size-12 cursor-pointer"
+                  ></Image>
                 </div>
               ) : (
                 <div className="flex flex-wrap gap-1 items-center justify-center mt-5">

@@ -20,7 +20,7 @@ const ChurchMemberNavbar = ({ className }: { className?: string }) => {
           <Link href={"/notifications"}>
             <BellRing fill="#000" className="cursor-pointer" />
           </Link>
-          <Link href={"/user/profile"}>
+          <Link href={"/church-admin/church-profile"}>
             <Image
               src={dummyProfile}
               alt="profile"

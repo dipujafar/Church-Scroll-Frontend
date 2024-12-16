@@ -4,8 +4,8 @@ import logo from "@/assets/image/logo.png";
 import Link from "next/link";
 import Container from "./Container";
 import facebookIcon from "@/assets/icons/facebookIcon.png";
-import xIcon from "@/assets/icons//x-icon.png";
-import LinkedIcon from "@/assets/icons/LinkedInIcon.png";
+import instagramIcon from "@/assets/icons/instagram.png";
+import tiktokIcon from "@/assets/icons/tiktok.png";
 import sparkTechLogo from "@/assets/image/SparkTech-Logo.png";
 
 const Footer = () => {
@@ -78,29 +78,33 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-between items-center gap-2 mt-5">
           {/* social media links */}
-          <div className="flex gap-x-2 items-center">
-            <Link href="#">
+          <div className="flex gap-x-2 items-center xl:justify-start justify-center  w-full mt-2 xl:ml-16">
+            <Link
+              href="https://www.instagram.com/churchscroll?igsh=Znc1Njhld3FudXNm"
+              target="_blank"
+            >
               <Image
-                src={LinkedIcon}
+                src={instagramIcon}
                 alt="LinkedInIcon"
                 className="size-7"
               ></Image>
             </Link>
-            <Link href="#">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61551473257006&rdid=X4Ofuk1uhr1kUQUr&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18KusYJYoR%2F#"
+              target="_blank"
+            >
               <Image
                 src={facebookIcon}
                 alt="facebookIcon"
                 className="size-7"
               ></Image>
             </Link>
-            <Link href="#">
-              <Image src={xIcon} alt="xIcon" className="size-7"></Image>
+            <Link
+              href="https://www.tiktok.com/@churchscroll?_t=ZT-8sEixGTVpFe&_r=1"
+              target="_blank"
+            >
+              <Image src={tiktokIcon} alt="xIcon" className="size-7"></Image>
             </Link>
-          </div>
-          {/* developer organization */}
-          <div className="flex gap-x-2">
-            <Image src={sparkTechLogo} alt="sparkTechLogo"></Image>
-            <p>Design & Developed by Sparktech Agency</p>
           </div>
         </div>
       </Container>

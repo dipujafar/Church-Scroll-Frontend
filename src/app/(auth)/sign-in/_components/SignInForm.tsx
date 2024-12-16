@@ -35,6 +35,7 @@ const SignInForm = () => {
 
   const onSubmit = async (data: FormData) => {
     localStorage.setItem("user", JSON.stringify(data));
+    localStorage.setItem("email", data.email);
 
     if (data?.email === "user@gmail.com") {
       localStorage.setItem("role", "user");
@@ -48,7 +49,7 @@ const SignInForm = () => {
 
     if (data?.email === "churchmember@gmail.com") {
       localStorage.setItem("role", "churchMember");
-      router.push("/church-member-info");
+      router.push("/church-member/church-member-profile");
     }
   };
 

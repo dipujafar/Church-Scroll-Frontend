@@ -26,7 +26,7 @@ const HeroSectionSearch = () => {
             <MapPin color="#fff" size={20}></MapPin>
             <p className="text-white">location</p>
           </div>
-          <Button className="bg-primary-blue px-7 py-5 hover:bg-white">
+          <Button className="bg-primary-blue px-7 py-5 hover:bg-black/70">
             Search
           </Button>
         </div>
