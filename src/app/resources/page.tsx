@@ -8,7 +8,6 @@ const ResourcesPage = () => {
   return (
     <div className="relative">
       <Navbar
-        logoClass="bg-[#a1a6a9] px-2 py-1 bg-opacity-70 rounded"
         className="absolute top-0 z-20 w-full text-white"
         btnClass="text-white border-white"
       ></Navbar>

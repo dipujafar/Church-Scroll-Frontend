@@ -48,10 +48,6 @@ const Navbar = ({
   }, [user, email]);
 
   const handleRedirectUserDashboard = () => {
-    if (email === "user@gmail.com") {
-      router.push("/user/profile");
-      return;
-    }
     if (email === "churchadmin@gmail.com") {
       router.push("/church-admin/church-profile");
       return;

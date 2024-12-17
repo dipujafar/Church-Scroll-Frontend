@@ -1,7 +1,17 @@
 "use client";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { LogOut, Menu, X, User, UserPlus, Church } from "lucide-react";
+import {
+  LogOut,
+  Menu,
+  X,
+  User,
+  UserPlus,
+  Church,
+  Calendar1,
+  Coins,
+  SignpostBig,
+} from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -25,12 +35,30 @@ const ChurchMemberSidebar = () => {
       icon: <Church size={25} color="#8A8A8A" />,
       href: "/churches/2",
     },
+    {
+      key: "event",
+      label: "Event",
+      icon: <Calendar1 size={25} color="#8A8A8A" />,
+      href: "/church-member/my-event",
+    },
 
     {
       key: "prayerRequest",
       label: "My network",
       icon: <UserPlus size={25} color="#8A8A8A" />,
       href: "/church-member/church-member-network",
+    },
+    {
+      key: "sponsorChurch",
+      label: "Sponsor a church",
+      icon: <Coins size={25} color="#8A8A8A" />,
+      href: "/church-member/sponsor-church",
+    },
+    {
+      key: "prayerRequest",
+      label: "Prayer Request",
+      icon: <SignpostBig size={25} color="#8A8A8A" />,
+      href: "/church-member/my-prayer",
     },
   ];
 
