@@ -15,7 +15,7 @@ const ResourcesPage = () => {
       <TopBanner
         image="/resources-1.jpg"
         title="Our Talented Hands: Member Skills and Services"
-        className="text-white/80 bg-opacity-50"
+        className="text-white bg-opacity-50"
         style={{ backgroundPosition: "100% 30%" }}
         backgroundImage="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/resources-1.jpg')"
       ></TopBanner>
