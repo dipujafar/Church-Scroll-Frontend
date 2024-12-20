@@ -8,14 +8,18 @@ const ResourcesPage = () => {
   return (
     <div className="relative">
       <Navbar
-        className="absolute top-0 z-20 w-full text-white"
+        className="absolute top-0 z-20 w-full text-white "
         btnClass="text-white border-white"
       ></Navbar>
+
       <TopBanner
-        image="/resources.jpg"
+        image="/resources-1.jpg"
         title="Our Talented Hands: Member Skills and Services"
         className="text-white/80 bg-opacity-50"
+        style={{ backgroundPosition: "100% 30%" }}
+        backgroundImage="linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('/resources-1.jpg')"
       ></TopBanner>
+
       <Container className="mt-5 lg:mt-10">
         <SectionTitle title="Explore Resources"></SectionTitle>
         <ResourcesContainer></ResourcesContainer>

@@ -20,11 +20,13 @@ const Hero = () => {
   return (
     <div
       style={{
-        backgroundImage: `linear-gradient(to top right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.5)), url('/herobg.jpg')`,
+        backgroundImage: `linear-gradient(to bottom right, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.2)), url('/herobg.jpg')`,
       }}
       className="bg-fixed"
     >
-      <Navbar></Navbar>
+      <Navbar
+      // className="bg-[#dabeaa] bg-opacity-15"
+      ></Navbar>
       <div className="py-20">
         <Container className="flex-center flex-col justify-center items-center min-h-[calc(100vh-280px)] -translate-y-10 gap-x-10 gap-y-5">
           <motion.div

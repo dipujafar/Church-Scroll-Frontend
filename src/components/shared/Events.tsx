@@ -24,7 +24,7 @@ const Events = () => {
           stopOnMouseEnter: true,
         }),
       ]}
-      className="w-full mt-8"
+      className="w-full lg:mt-8 mt-4"
     >
       <CarouselContent>
         {eventData?.slice(0, 8)?.map((event) => (

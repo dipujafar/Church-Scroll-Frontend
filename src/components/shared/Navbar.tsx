@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import logo from "@/assets/image/logo.png";
+// import logo from "@/assets/image/logo.png";
+import logo from "@/assets/image/logo-updated.png";
 import dummyProfile from "@/assets/image/dummy-profile.png";
 import Container from "./Container";
 import { BellRing, Mail, TableOfContents } from "lucide-react";
@@ -29,11 +30,9 @@ const navLinks = [
 const Navbar = ({
   className,
   btnClass,
-  logoClass,
 }: {
   className?: string;
   btnClass?: string;
-  logoClass?: string;
 }) => {
   const [user, setUser] = useState(false);
   const [email, setEmail] = useState("");
@@ -63,10 +62,15 @@ const Navbar = ({
   return (
     <div className={cn(className)}>
       <Container className="flex-between items-center gap-x-2 py-4">
-        <Link href="/" className="">
-          <div className={cn(logoClass)}>
-            <Image src={logo} alt="logo" className="-translate-y-2 "></Image>
-          </div>
+        <Link
+          href="/"
+          className="inline-block  w-[65%] sm:w-1/2 lg:w-1/6 h-auto"
+        >
+          <Image
+            src={logo}
+            alt="logo"
+            className="-translate-y-2 brightness-105 "
+          ></Image>
         </Link>
 
         {/* nav links */}
@@ -84,6 +88,7 @@ const Navbar = ({
             </li>
           ))}
         </ul>
+
         {user ? (
           <div className="md:flex hidden xl:gap-x-5 gap-x-2 items-center">
             <Button
@@ -138,7 +143,7 @@ const Navbar = ({
             </Link>
             <Link href="/sign-up">
               <Button className="bg-primary-blue text-lg hover:bg-primary-blue/80">
-                Sing Up
+                Sign Up
               </Button>
             </Link>
           </div>

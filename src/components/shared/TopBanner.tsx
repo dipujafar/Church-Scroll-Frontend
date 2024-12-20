@@ -8,20 +8,32 @@ import {
 } from "@/animation/HeroSectionMotion";
 
 type TPropsType = {
+  backgroundImage?: string;
   image: string;
   title: string;
   description?: string;
   className?: string;
+  style?: Record<string, any>;
 };
 
-const TopBanner = ({ image, title, description, className }: TPropsType) => {
+const TopBanner = ({
+  backgroundImage,
+  image,
+  title,
+  description,
+  className,
+  style,
+}: TPropsType) => {
   return (
     <div
       className={cn(
         "min-h-[80vh]  bg-fixed bg-cover bg-center  relative bg-opacity-20 bg-gray-500",
         className
       )}
-      style={{ backgroundImage: `url(${image})` }}
+      style={{
+        backgroundImage: backgroundImage || `url(${image})`,
+        ...style,
+      }}
     >
       <Container>
         <div className="overflow-x-hidden">

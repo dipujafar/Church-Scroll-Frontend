@@ -6,13 +6,11 @@ import Events from "../../../shared/Events";
 const UpcomingEvent = () => {
   return (
     <div>
-      <SectionTitle
-        title="Upcoming Church  Events"
-        subTitle="ChurchScroll offers a suite of features designed to enhance your community experience. From privacy settings to event management, we empower members to connect safely and meaningfully."
-      ></SectionTitle>
-      <div className="flex  justify-end">
+      <SectionTitle title="Upcoming Church  Events"></SectionTitle>
+
+      <div className="flex  justify-end mt-4 lg:mt-0">
         <Link href="/events">
-          <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden text-xl truncate flex items-center">
+          <p className="text-black hover:text-black/70  group cursor-pointer overflow-hidden lg:text-xl truncate flex items-center">
             View all
             <ChevronRight
               size={24}
@@ -22,6 +20,7 @@ const UpcomingEvent = () => {
           </p>
         </Link>
       </div>
+
       <Events></Events>
     </div>
   );

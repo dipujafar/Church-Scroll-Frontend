@@ -6,7 +6,7 @@ import SectionTitle from "@/components/shared/SectionTitle";
 const HowTOWork = () => {
   return (
     <div id="howToWork">
-      <SectionTitle title="How ChurchScrool Works"></SectionTitle>
+      <SectionTitle title="How ChurchScroll Works"></SectionTitle>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-10">
         <div className="group">
           <div className="flex gap-x-2 items-center">
