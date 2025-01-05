@@ -229,7 +229,7 @@ const Navbar = ({
                   </Link>
                   <Link href="/sign-up">
                     <Button className="bg-primary-blue text-lg hover:bg-primary-blue/80">
-                      Sing Up
+                      Sign Up
                     </Button>
                   </Link>
                 </div>

@@ -212,7 +212,7 @@ export default function CountryStateCitySelector({
       </div>
 
       <div className="grid w-full grid-cols-2 gap-x-3 gap-y-3 lg:grid-cols-3">
-        <div>
+        {/* <div>
           <Input
             type="text"
             defaultValue={userAddress?.area}
@@ -231,6 +231,16 @@ export default function CountryStateCitySelector({
             placeholder="Type House No"
             className="outline-none focus:outline-none py-5 bg-primary-light-gray"
             {...register("house")}
+          />
+        </div> */}
+        <div className="col-span-2">
+          <Input
+            defaultValue={userAddress?.streetAddress}
+            type="text"
+            id="streetAddress"
+            placeholder="Street Address"
+            className="outline-none focus:outline-none py-5 bg-primary-light-gray"
+            {...register("streetAddress")}
           />
         </div>
 

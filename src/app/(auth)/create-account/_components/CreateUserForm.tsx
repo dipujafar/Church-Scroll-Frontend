@@ -19,6 +19,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import inputIcon from "@/assets/icons/inputIcon.png";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Checkbox } from "@/components/ui/checkbox";
 
 // Define form data types
 interface FormData {
@@ -35,6 +36,7 @@ const CreateAccountForm = () => {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const role = useSearchParams().get("role");
   const router = useRouter();
+  const [isAdult, setIsAdult] = useState(false);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.target;
@@ -240,11 +242,26 @@ const CreateAccountForm = () => {
                 </p>
               )}
             </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox
+                id="terms"
+                color="#7b7b7b"
+                className="border-gray-500"
+                onCheckedChange={() => setIsAdult(!isAdult)}
+              />
+              <label
+                htmlFor="terms"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-black/70"
+              >
+                You are 17 years or older
+              </label>
+            </div>
 
             {/* Login button */}
             <Button
               type="submit"
               className="rounded-full bg-primary-blue hover:bg-black/70"
+              disabled={!isAdult}
             >
               Create Account
             </Button>

@@ -26,6 +26,7 @@ interface FormData {
 const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const [isAdult, setIsAdult] = useState(false);
 
   const {
     register,

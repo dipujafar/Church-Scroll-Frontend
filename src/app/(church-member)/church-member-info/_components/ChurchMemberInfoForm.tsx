@@ -33,6 +33,7 @@ interface FormData {
   designation: string;
   registrationCode: string;
   servicesTags: string[];
+  hobbies: string[];
 }
 
 const filterData = [
@@ -269,8 +270,7 @@ const ChurchMemberInfoForm = () => {
                   country: "",
                   state: "",
                   city: "",
-                  area: "",
-                  house: "",
+                  streetAddress: "",
                 }}
                 register={register}
                 setValue={setValue}
@@ -278,7 +278,7 @@ const ChurchMemberInfoForm = () => {
             </div>
 
             {/* Input Designation */}
-            <div className="flex flex-col space-y-1.5">
+            {/* <div className="flex flex-col space-y-1.5">
               <Label className=" text-lg font-semibold  text-primary-black/80">
                 Designation
               </Label>
@@ -296,7 +296,7 @@ const ChurchMemberInfoForm = () => {
                   {errors.designation.message}
                 </p>
               )}
-            </div>
+            </div> */}
 
             {/* Input registration code  */}
             <div className="flex flex-col space-y-1.5">
@@ -346,6 +346,7 @@ const ChurchMemberInfoForm = () => {
                 ))}
               </div>
             </div>
+            {/* input services tags */}
             <div className="flex flex-col space-y-1.5">
               <Label className="text-lg font-semibold text-primary-black/80">
                 Services Tags
@@ -353,6 +354,23 @@ const ChurchMemberInfoForm = () => {
 
               <Controller
                 name="servicesTags"
+                control={control}
+                render={({ field }) => (
+                  <TagInput
+                    value={field.value}
+                    onChange={(newValue) => field.onChange(newValue)}
+                  />
+                )}
+              />
+            </div>
+            {/* ================================== hobbies tags */}
+            <div className="flex flex-col space-y-1.5">
+              <Label className="text-lg font-semibold text-primary-black/80">
+                Hobbies
+              </Label>
+
+              <Controller
+                name="hobbies"
                 control={control}
                 render={({ field }) => (
                   <TagInput

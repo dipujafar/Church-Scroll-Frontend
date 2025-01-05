@@ -9,9 +9,9 @@ const ChurchCard = ({ data }: { data: TChurchData }) => {
         alt="church_image"
         width={1200}
         height={1200}
-        className=" w-auto  h-[210px] group-hover:scale-105 duration-300 rounded-3xl"
+        className="w-auto  lg:h-[210px] h-[150px] group-hover:scale-105 duration-300 rounded-3xl"
       ></Image>
-      <p className="text-xl text-center text-black">{data?.name}</p>
+      <p className="lg:text-xl text-center text-black">{data?.name}</p>
     </div>
   );
 };

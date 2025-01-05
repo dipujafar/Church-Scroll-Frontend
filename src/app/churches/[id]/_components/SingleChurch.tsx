@@ -18,6 +18,10 @@ import { ChevronRight } from "lucide-react";
 import ChurchMembers from "./ChurchMembers";
 import Events from "@/components/shared/Events";
 import CreateSpecificSponsorModal from "@/components/shared/CreateSpecificSponsorModal";
+import facebookIcon from "@/assets/icons/facebookIcon.png";
+import instagramIcon from "@/assets/icons/instagram.png";
+import xIcon from "@/assets/icons/x-icon.png";
+import websiteIcon from "@/assets/icons/websiteLogo.png";
 const SingleChurch = () => {
   const [currentTab, setCurrentTab] = useState(0);
   const [openSponsorModal, setOpenSponsorModal] = useState(false);
@@ -71,6 +75,35 @@ const SingleChurch = () => {
               <p className="text-lg">1.2 km from Location</p>
             </div>
           </Link>
+
+          {/* ======================= social media links ======================= */}
+
+          <div className="flex gap-x-2 items-center xl:justify-start justify-center  w-full mt-1">
+            <Link href="#">
+              <Image
+                src={websiteIcon}
+                alt="websiteIcon"
+                className="size-7"
+              ></Image>
+            </Link>
+            <Link href="#">
+              <Image
+                src={instagramIcon}
+                alt="LinkedInIcon"
+                className="size-7"
+              ></Image>
+            </Link>
+            <Link href="#">
+              <Image
+                src={facebookIcon}
+                alt="facebookIcon"
+                className="size-7"
+              ></Image>
+            </Link>
+            <Link href="#">
+              <Image src={xIcon} alt="xIcon" className="size-7"></Image>
+            </Link>
+          </div>
         </div>
         <div>
           <Link href="/prayer-request">
@@ -118,7 +151,7 @@ const SingleChurch = () => {
           }
           onClick={() => setCurrentTab(2)}
         >
-          Event
+          Events
         </Link>
       </div>
       {/* Description */}
