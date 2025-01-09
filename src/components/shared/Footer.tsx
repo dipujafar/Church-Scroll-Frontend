@@ -1,12 +1,11 @@
 import Image from "next/image";
-
 import logo from "@/assets/image/logo.png";
 import Link from "next/link";
 import Container from "./Container";
 import facebookIcon from "@/assets/icons/facebookIcon.png";
 import instagramIcon from "@/assets/icons/instagram.png";
 import tiktokIcon from "@/assets/icons/tiktok.png";
-import sparkTechLogo from "@/assets/image/SparkTech-Logo.png";
+
 
 const Footer = () => {
   return (
